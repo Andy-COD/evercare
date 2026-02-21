@@ -1,0 +1,275 @@
+.section {
+  background: #f3f4f6;
+  padding: clamp(62px, 8vw, 96px) clamp(14px, 5vw, 90px) clamp(70px, 8vw, 110px);
+}
+
+.headWrap {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.kicker {
+  margin: 0;
+  display: inline-flex;
+  border: 1px solid #d0d8df;
+  border-radius: 999px;
+  padding: 10px 22px;
+  color: #5a6e81;
+  font-size: clamp(12px, 0.95vw, 16px);
+}
+
+.title {
+  margin: 20px 0 0;
+  color: #10192d;
+  line-height: 1.03;
+  font-size: clamp(52px, 5.7vw, 92px);
+}
+
+.title span {
+  color: #006c75;
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.subtitle {
+  margin: 24px auto 0;
+  max-width: 45ch;
+  color: #3d4959;
+  line-height: 1.34;
+  font-size: clamp(21px, 1.8vw, 36px);
+}
+
+.divider {
+  width: 2px;
+  height: 84px;
+  background: #d5dce3;
+  margin: 30px auto 24px;
+}
+
+.reviewPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #dde3e8;
+  border-radius: 999px;
+  background: #f8fafb;
+  box-shadow: 0 10px 24px rgba(16, 25, 45, 0.08);
+  color: #131b2a;
+  font-size: clamp(18px, 1.3vw, 26px);
+  padding: 14px 26px;
+}
+
+.reviewPill em {
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+}
+
+.trustRow {
+  margin: 20px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #2e3c4c;
+  font-size: clamp(16px, 1.25vw, 24px);
+}
+
+.cqc {
+  border-radius: 999px;
+  background: #007581;
+  color: #ecfbfd;
+  padding: 10px 16px;
+  font-size: clamp(12px, 0.95vw, 16px);
+}
+
+.people {
+  letter-spacing: -0.08em;
+}
+
+.stars {
+  color: #0daa74;
+  letter-spacing: 0.04em;
+}
+
+.cardsGrid {
+  margin: clamp(38px, 5vw, 64px) auto 0;
+  max-width: 1320px;
+  display: grid;
+  grid-template-columns: 0.9fr 0.9fr 0.9fr;
+  gap: 18px;
+}
+
+.metricsCol {
+  display: grid;
+  gap: 12px;
+}
+
+.metricCard {
+  background: #dce6ef;
+  border: 1px solid #b9cad8;
+  border-radius: 20px;
+  padding: 26px 20px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metricCard h3 {
+  margin: 0;
+  color: #10192d;
+  font-size: clamp(68px, 4.6vw, 110px);
+  line-height: 0.95;
+}
+
+.metricCard p {
+  margin: 0;
+  color: #182338;
+  line-height: 1.2;
+  font-size: clamp(18px, 1.35vw, 27px);
+}
+
+.featureCard {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 18px 18px 14px;
+  background: linear-gradient(180deg, #58a5b3 0%, #038190 100%);
+}
+
+.cardKicker {
+  margin: 0;
+  color: rgba(237, 253, 255, 0.9);
+  font-size: clamp(12px, 0.95vw, 16px);
+}
+
+.featureCard h3 {
+  margin: 14px 0 12px;
+  color: #ecfafc;
+  line-height: 1.14;
+  font-size: clamp(24px, 2.1vw, 40px);
+  max-width: 18ch;
+}
+
+.featureCard img {
+  width: 100%;
+  border-radius: 14px;
+  min-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.cornerDot {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(248, 251, 252, 0.95);
+}
+
+.impactCard {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 570px;
+}
+
+.impactCard > p {
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  z-index: 2;
+  color: rgba(243, 250, 253, 0.95);
+}
+
+.impactCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 0 16px 16px;
+  background: linear-gradient(180deg, rgba(10, 30, 44, 0) 0%, rgba(10, 30, 44, 0.7) 70%);
+  color: #f4fbfd;
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: clamp(66px, 4.7vw, 106px);
+  line-height: 0.9;
+}
+
+.overlay p {
+  margin: 8px 0 0;
+  font-size: clamp(20px, 1.45vw, 30px);
+}
+
+.overlay button {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  border: 1px solid rgba(239, 252, 255, 0.7);
+  background: rgba(240, 250, 253, 0.24);
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 1120px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .impactCard {
+    min-height: 430px;
+  }
+
+  .metricsCol {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 54px 10px 72px;
+  }
+
+  .subtitle {
+    font-size: clamp(20px, 5.2vw, 28px);
+  }
+
+  .divider {
+    height: 68px;
+  }
+
+  .reviewPill {
+    font-size: clamp(16px, 4.3vw, 20px);
+    padding: 10px 16px;
+  }
+
+  .metricCard {
+    min-height: 190px;
+  }
+
+  .metricsCol {
+    grid-template-columns: 1fr;
+  }
+
+  .overlay button {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+}

@@ -4,6 +4,9 @@ import { useEffect, useRef } from "react";
 import Hero from "@/components/Hero";
 import WhyAimsSection from "@/components/WhyAimsSection";
 import DifferenceSection from "@/components/DifferenceSection";
+import ServicesShowcaseSection from "@/components/ServicesShowcaseSection";
+import TestimonialHighlightsSection from "@/components/TestimonialHighlightsSection";
+import ConsultationSection from "@/components/ConsultationSection";
 
 export default function Home() {
   const mainRef = useRef<HTMLElement>(null);
@@ -78,6 +81,9 @@ export default function Home() {
       <Hero />
       <WhyAimsSection />
       <DifferenceSection />
+      <ServicesShowcaseSection />
+      <TestimonialHighlightsSection />
+      <ConsultationSection />
     </main>
   );
 }

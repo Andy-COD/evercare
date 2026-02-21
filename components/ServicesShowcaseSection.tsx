@@ -1,0 +1,87 @@
+import styles from "./ServicesShowcaseSection.module.css";
+
+const sections = [
+  {
+    titleMain: "Home",
+    titleAccent: "care",
+    chip: "HOME CARE SERVICES",
+    description:
+      "No matter your family's needs, we provide compassionate, reliable, and personalized home care support that you can truly count on, every day and at every step of the way.",
+    bullets: [
+      "Hourly care",
+      "Night care",
+      "Respite care",
+      "Health & wellbeing check",
+      "Companionship care",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1800&q=80",
+    imageAlt: "Carer assisting an older adult at home",
+  },
+  {
+    titleMain: "Live-in",
+    titleAccent: "care",
+    chip: "LIVE-IN CARE SERVICES",
+    description:
+      "Live-in care provides full-time support from a dedicated carer who stays in your home, offering round-the-clock assistance, companionship, and peace of mind.",
+    bullets: [
+      "Live-in care",
+      "Alternative to a care home",
+      "Live-in care for couples",
+      "Short term respite care",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1559234938-b60fff04894d?auto=format&fit=crop&w=1800&q=80",
+    imageAlt: "Carer supporting an elderly woman in a living room",
+  },
+];
+
+export default function ServicesShowcaseSection() {
+  return (
+    <section className={styles.section}>
+      <div className={styles.headWrap}>
+        <p className={styles.kicker}>OUR SERVICES</p>
+        <h2 className={styles.title}>
+          Care that fits
+          <br />
+          your <span>life</span>
+        </h2>
+        <p className={styles.subtitle}>
+          From daily assistance to round-the-clock support, our services are
+          tailored to your needs so you can feel safe, supported, and confident
+          at home.
+        </p>
+      </div>
+
+      <div className={styles.listWrap}>
+        {sections.map((service) => (
+          <article className={styles.serviceCard} key={service.chip}>
+            <div className={styles.content}>
+              <div className={styles.titleRow}>
+                <h3>
+                  {service.titleMain} <span>{service.titleAccent}</span>
+                </h3>
+                <div className={styles.chipWrap}>
+                  <span className={styles.chip}>✦ {service.chip}</span>
+                  <span className={styles.arrow}>↗</span>
+                </div>
+              </div>
+
+              <p className={styles.description}>{service.description}</p>
+
+              <ul className={styles.bullets}>
+                {service.bullets.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.imageWrap}>
+              <img src={service.image} alt={service.imageAlt} loading="lazy" />
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
