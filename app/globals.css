@@ -295,11 +295,18 @@ h1 em {
   }
 
   .homecare-hero {
+    border-radius: 0;
     min-height: 100vh;
   }
 
   .homecare-nav {
     margin: 10px;
+  }
+
+  .homecare-nav.homecare-nav-main-sticky {
+    margin: 0;
+    left: 0 !important;
+    width: 100vw !important;
   }
 
   .brand {

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Hero from "@/components/Hero";
 import WhyAimsSection from "@/components/WhyAimsSection";
+import DifferenceSection from "@/components/DifferenceSection";
 
 export default function Home() {
   const mainRef = useRef<HTMLElement>(null);
@@ -17,6 +18,7 @@ export default function Home() {
 
     const topOffset = 0;
     const heroInset = 22;
+    const mobileBreakpoint = 820;
     let rafId = 0;
 
     const clearSticky = () => {
@@ -41,7 +43,10 @@ export default function Home() {
       const startWidth = heroRect.width - heroInset * 2;
       const endLeft = 0;
       const endWidth = window.innerWidth;
-      const progress = Math.min(Math.max((window.scrollY - heroTop) / 180, 0), 1);
+      const isMobile = window.innerWidth <= mobileBreakpoint;
+      const progress = isMobile
+        ? 1
+        : Math.min(Math.max((window.scrollY - heroTop) / 180, 0), 1);
       const currentLeft = startLeft + (endLeft - startLeft) * progress;
       const currentWidth = startWidth + (endWidth - startWidth) * progress;
 
@@ -72,6 +77,7 @@ export default function Home() {
     <main ref={mainRef}>
       <Hero />
       <WhyAimsSection />
+      <DifferenceSection />
     </main>
   );
 }

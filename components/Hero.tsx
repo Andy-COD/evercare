@@ -25,9 +25,9 @@ export default function Hero() {
       <div className="hero-overlay" />
 
       <div className="hero-content">
-        <p className="review-pill fade-in delay-1">
+        {/* <p className="review-pill fade-in delay-1">
           ✦ 9.7 homecare.co.uk Reviews
-        </p>
+        </p> */}
         <h1 className="fade-in delay-2">
           Ghana&apos;s most trusted <em>home care</em> agency
         </h1>
@@ -44,7 +44,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="trust-row fade-in delay-4">
+        {/* <div className="trust-row fade-in delay-4">
           <span className="cqc-pill">CareQuality Commission</span>
           <span className="avatars">
             <i>A</i>
@@ -53,7 +53,7 @@ export default function Hero() {
             <i>D</i>
           </span>
           <span>Trusted by 2,000+ Customers</span>
-        </div>
+        </div> */}
       </div>
     </section>
   );
