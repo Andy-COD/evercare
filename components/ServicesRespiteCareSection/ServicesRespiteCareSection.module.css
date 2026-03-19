@@ -1,0 +1,139 @@
+.section {
+  padding: clamp(46px, 6vw, 84px) clamp(12px, 5vw, 84px) clamp(70px, 8vw, 110px);
+}
+
+.inner {
+  max-width: 1480px;
+  margin: 0 auto;
+  border-radius: 34px;
+  padding: clamp(30px, 4vw, 56px);
+  background: radial-gradient(circle at 16% 12%, rgba(53, 225, 209, 0.76) 0%, rgba(11, 145, 159, 0.98) 40%, rgba(15, 104, 147, 1) 100%);
+  color: #ebfbfd;
+}
+
+.headingBlock {
+  text-align: center;
+}
+
+.kicker {
+  margin: 0;
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 248, 251, 0.64);
+  background: rgba(202, 247, 251, 0.14);
+  color: rgba(236, 251, 253, 0.96);
+  padding: 10px 22px;
+  font-size: clamp(12px, 0.95vw, 16px);
+  letter-spacing: 0.03em;
+}
+
+.headingBlock h2 {
+  margin: 22px 0 0;
+  line-height: 1.06;
+  font-size: clamp(42px, 4.9vw, 84px);
+}
+
+.headingBlock h2 span {
+  margin-left: 10px;
+  color: #f4fcfe;
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.lead {
+  margin: 18px auto 0;
+  max-width: 38ch;
+  color: rgba(233, 250, 252, 0.94);
+  line-height: 1.34;
+  font-size: clamp(20px, 1.5vw, 29px);
+}
+
+.divider {
+  width: 2px;
+  height: 70px;
+  background: rgba(217, 250, 252, 0.56);
+  margin: 24px auto 0;
+}
+
+.contentGrid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.summaryCard {
+  border-radius: 28px;
+  padding: 16px;
+  background: rgba(244, 252, 254, 0.12);
+  border: 1px solid rgba(218, 247, 250, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.summaryImage {
+  min-height: clamp(300px, 29vw, 460px);
+  border-radius: 22px;
+  background-image: linear-gradient(180deg, rgba(242, 250, 252, 0.08), rgba(242, 250, 252, 0.08)),
+    url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.summaryCard p {
+  margin: 18px 10px 8px;
+  max-width: 34ch;
+  color: rgba(232, 251, 253, 0.94);
+  line-height: 1.3;
+  font-size: clamp(19px, 1.28vw, 24px);
+}
+
+.pointsColumn {
+  display: grid;
+  gap: 14px;
+}
+
+.pointCard {
+  border-radius: 24px;
+  padding: 24px 24px 26px;
+  background: rgba(245, 252, 254, 0.96);
+  color: #15243a;
+  box-shadow: 0 18px 36px rgba(6, 77, 102, 0.12);
+}
+
+.pointCard h3 {
+  margin: 0;
+  font-size: clamp(26px, 1.9vw, 34px);
+  line-height: 1.08;
+}
+
+.pointCard p {
+  margin: 12px 0 0;
+  color: #3a4656;
+  line-height: 1.3;
+  font-size: clamp(18px, 1.1vw, 22px);
+}
+
+@media (max-width: 980px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 36px 10px 62px;
+  }
+
+  .inner {
+    border-radius: 20px;
+    padding: 20px 14px;
+  }
+
+  .summaryImage,
+  .pointCard,
+  .summaryCard {
+    border-radius: 16px;
+  }
+}

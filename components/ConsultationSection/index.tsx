@@ -62,7 +62,7 @@ export default function ConsultationSection() {
     careType: false,
     message: false,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -95,7 +95,7 @@ export default function ConsultationSection() {
 
     setSubmitting(true);
     setSubmitError(null);
-    setSubmitted(false);
+    setSuccessMessage(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -106,13 +106,19 @@ export default function ConsultationSection() {
         body: JSON.stringify(values),
       });
 
-      const data = (await response.json()) as { ok?: boolean; error?: string };
+      const data = (await response.json()) as {
+        ok?: boolean;
+        error?: string;
+        message?: string;
+      };
       if (!response.ok || !data.ok) {
         setSubmitError(data.error ?? "Could not submit your request. Please try again.");
         return;
       }
 
-      setSubmitted(true);
+      setSuccessMessage(
+        data.message ?? "Thanks, your request has been received.",
+      );
       setValues(initialValues);
       setTouched({
         fullName: false,
@@ -232,7 +238,7 @@ export default function ConsultationSection() {
             </button>
 
             {submitError && <p className={styles.error}>{submitError}</p>}
-            {submitted && <p className={styles.success}>Thanks, your request has been received.</p>}
+            {successMessage && <p className={styles.success}>{successMessage}</p>}
           </form>
         </div>
       </div>

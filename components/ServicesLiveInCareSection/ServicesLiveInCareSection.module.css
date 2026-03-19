@@ -1,0 +1,117 @@
+.section {
+  padding: clamp(52px, 7vw, 94px) clamp(12px, 5vw, 84px);
+  display: grid;
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: clamp(18px, 2.6vw, 34px);
+  align-items: stretch;
+}
+
+.mediaCard {
+  min-height: clamp(420px, 42vw, 720px);
+  border-radius: 28px;
+  background-image: linear-gradient(180deg, rgba(235, 244, 247, 0.06), rgba(235, 244, 247, 0.06)),
+    url("https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 24px 54px rgba(18, 79, 95, 0.09);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.kicker {
+  margin: 0;
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid #d4dfe5;
+  background: #f8fbfc;
+  color: #4f6378;
+  padding: 11px 22px;
+  font-size: clamp(12px, 0.95vw, 16px);
+  letter-spacing: 0.03em;
+}
+
+.copy h2 {
+  margin: 20px 0 0;
+  color: #101a31;
+  line-height: 1.03;
+  font-size: clamp(42px, 4.8vw, 82px);
+}
+
+.copy h2 em {
+  color: #016b74;
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.lead {
+  margin: 20px 0 0;
+  max-width: 34ch;
+  color: #374251;
+  line-height: 1.34;
+  font-size: clamp(20px, 1.48vw, 28px);
+}
+
+.pointGrid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pointCard {
+  min-height: 146px;
+  border-radius: 22px;
+  border: 1px solid #d8e5ea;
+  background: linear-gradient(180deg, #fbfdfd 0%, #eef4f6 100%);
+  padding: 18px 18px 20px;
+}
+
+.pointIcon {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(0, 122, 133, 0.1);
+  color: #007a85;
+  font-size: 18px;
+}
+
+.pointCard p {
+  margin: 14px 0 0;
+  color: #243447;
+  line-height: 1.3;
+  font-size: clamp(17px, 1.08vw, 21px);
+}
+
+@media (max-width: 980px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .pointGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 42px 10px;
+  }
+
+  .mediaCard {
+    min-height: 280px;
+    border-radius: 18px;
+  }
+
+  .pointCard {
+    min-height: unset;
+    border-radius: 16px;
+  }
+}

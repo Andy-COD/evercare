@@ -1,5 +1,7 @@
 import styles from "./page.module.css";
 import ServicesDomiciliaryIntro from "@/components/ServicesDomiciliaryIntro";
+import ServicesLiveInCareSection from "@/components/ServicesLiveInCareSection";
+import ServicesRespiteCareSection from "@/components/ServicesRespiteCareSection";
 
 export default function ServicesPage() {
   return (
@@ -21,6 +23,8 @@ export default function ServicesPage() {
       </section>
 
       <ServicesDomiciliaryIntro />
+      <ServicesLiveInCareSection />
+      <ServicesRespiteCareSection />
     </main>
   );
 }

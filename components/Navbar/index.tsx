@@ -138,7 +138,6 @@ export default function Navbar() {
           <Link href="/about">About us</Link>
           <Link href="/services">Services +</Link>
           <Link href="/contact">Contact us</Link>
-          <Link href="/services#coverage">Check coverage ↗</Link>
         </nav>
         <a className="call-pill" href="tel:+11234567890">
           <span className="call-icon">☎</span>
