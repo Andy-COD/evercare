@@ -63,6 +63,8 @@ export default function ConsultationSection() {
     message: false,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const errors = useMemo(() => validate(values), [values]);
   const hasErrors = Object.keys(errors).length > 0;
@@ -78,7 +80,7 @@ export default function ConsultationSection() {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     setTouched({
@@ -91,21 +93,45 @@ export default function ConsultationSection() {
 
     if (hasErrors) return;
 
-    setSubmitted(true);
-    setValues(initialValues);
-    setTouched({
-      fullName: false,
-      email: false,
-      phone: false,
-      careType: false,
-      message: false,
-    });
+    setSubmitting(true);
+    setSubmitError(null);
+    setSubmitted(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = (await response.json()) as { ok?: boolean; error?: string };
+      if (!response.ok || !data.ok) {
+        setSubmitError(data.error ?? "Could not submit your request. Please try again.");
+        return;
+      }
+
+      setSubmitted(true);
+      setValues(initialValues);
+      setTouched({
+        fullName: false,
+        email: false,
+        phone: false,
+        careType: false,
+        message: false,
+      });
+    } catch {
+      setSubmitError("Network error. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const fieldError = (field: keyof FormValues) => (touched[field] ? errors[field] : undefined);
 
   return (
-    <section className={styles.section}>
+    <section id="contact" className={styles.section}>
       <div className={styles.panel}>
         <div className={styles.left}>
           <h2>
@@ -201,10 +227,11 @@ export default function ConsultationSection() {
               {fieldError("message") && <p className={styles.error}>{fieldError("message")}</p>}
             </div>
 
-            <button type="submit" className={styles.submitBtn}>
-              Request Consultation
+            <button type="submit" className={styles.submitBtn} disabled={submitting}>
+              {submitting ? "Submitting..." : "Request Consultation"}
             </button>
 
+            {submitError && <p className={styles.error}>{submitError}</p>}
             {submitted && <p className={styles.success}>Thanks, your request has been received.</p>}
           </form>
         </div>

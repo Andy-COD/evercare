@@ -150,6 +150,11 @@
   background: #d5f2f6;
 }
 
+.submitBtn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
 .success {
   margin: 10px 2px 0;
   color: #d9ffe9;

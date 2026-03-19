@@ -1,0 +1,200 @@
+.page {
+  background: #f3f4f6;
+}
+
+.storySection {
+  padding: clamp(30px, 4vw, 60px) clamp(12px, 4.5vw, 86px) clamp(70px, 8vw, 110px);
+}
+
+.kicker {
+  margin: 0;
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid #d2d9e0;
+  color: #4f6378;
+  padding: 11px 22px;
+  font-size: clamp(12px, 0.95vw, 16px);
+  letter-spacing: 0.03em;
+}
+
+.storySection h1 {
+  margin: 22px 0 0;
+  color: #0f1930;
+  line-height: 1.04;
+  font-size: clamp(48px, 5.7vw, 92px);
+}
+
+.storySection h1 span {
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  color: #016b74;
+  font-weight: 500;
+}
+
+.lead {
+  margin: 24px 0 0;
+  max-width: 62ch;
+  color: #364251;
+  line-height: 1.33;
+  font-size: clamp(21px, 1.65vw, 34px);
+}
+
+.divider {
+  width: 2px;
+  height: 86px;
+  background: #d7dde3;
+  margin: 28px auto 20px;
+}
+
+.mosaic {
+  display: grid;
+  max-width: 1360px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 560px 340px;
+  grid-template-areas:
+    "leftTop centerTop rightTop"
+    "leftBottom centerBottom rightBottom";
+  gap: 16px;
+}
+
+.tile {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.imageTile {
+  background: #dfe8ee;
+}
+
+.tileImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.leftTop .tileImage {
+  object-position: center top;
+}
+
+.rightTop .tileImage {
+  object-position: center;
+}
+
+.leftTop {
+  grid-area: leftTop;
+}
+
+.rightTop {
+  grid-area: rightTop;
+}
+
+.leftBottom {
+  grid-area: leftBottom;
+}
+
+.centerBottom {
+  grid-area: centerBottom;
+}
+
+.rightBottom {
+  grid-area: rightBottom;
+}
+
+.centerTop {
+  grid-area: centerTop;
+  background: radial-gradient(circle at 16% 12%, rgba(115, 229, 206, 0.9) 0%, rgba(11, 149, 163, 0.95) 42%, rgba(7, 104, 146, 0.98) 100%);
+  color: #e9f9fb;
+  padding: clamp(24px, 2.3vw, 34px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wreathRow {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.wreath {
+  color: rgba(233, 250, 252, 0.9);
+  font-size: clamp(46px, 3.1vw, 60px);
+  line-height: 1;
+}
+
+.years {
+  margin: 0;
+  line-height: 0.9;
+  font-size: clamp(72px, 4.8vw, 108px);
+  font-weight: 700;
+}
+
+.yearsLabel {
+  margin: -2px 0 0;
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(34px, 2.1vw, 42px);
+}
+
+.centerTop h2 {
+  margin: 20px 0 0;
+  letter-spacing: 0.09em;
+  font-size: clamp(38px, 2.45vw, 48px);
+  font-weight: 500;
+}
+
+.centerTop p:last-child {
+  margin: auto 0 8px;
+  max-width: 21ch;
+  font-size: clamp(23px, 1.38vw, 28px);
+  line-height: 1.32;
+}
+
+@media (max-width: 1100px) {
+  .mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      "leftTop"
+      "centerTop"
+      "rightTop"
+      "leftBottom"
+      "centerBottom"
+      "rightBottom";
+  }
+
+  .centerTop {
+    min-height: 520px;
+  }
+
+  .leftTop,
+  .rightTop,
+  .leftBottom,
+  .centerBottom,
+  .rightBottom {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 760px) {
+  .storySection {
+    padding: 18px 10px 70px;
+  }
+
+  .lead {
+    font-size: clamp(19px, 5.1vw, 25px);
+  }
+
+  .divider {
+    height: 64px;
+  }
+
+  .tile {
+    border-radius: 16px;
+  }
+}

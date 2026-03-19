@@ -67,7 +67,13 @@ a {
   margin: 0;
   z-index: 40;
   border-radius: 0;
+  background: var(--active-route-hero-bg, #fff);
   box-shadow: 0 2px 14px rgba(9, 32, 42, 0.1);
+}
+
+.homecare-nav-main-sticky .brand,
+.homecare-nav-main-sticky .menu {
+  color: #effbfc;
 }
 
 .brand {
@@ -123,9 +129,148 @@ a {
   place-items: center;
 }
 
+.nav-burger {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0c8f98, #0a7680);
+  box-shadow: 0 8px 18px rgba(9, 87, 97, 0.26);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-burger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: #fff;
+  margin: 5px 0;
+}
+
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 31, 42, 0.34);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+  z-index: 44;
+}
+
+.mobile-drawer-backdrop-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 22% 26%, rgba(135, 219, 230, 0.35), rgba(11, 121, 131, 0.54));
+  backdrop-filter: blur(5px);
+  transform: translateX(110%);
+  transition: transform 0.26s ease;
+  z-index: 45;
+  overflow: hidden;
+}
+
+.mobile-drawer-open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-close {
+  position: absolute;
+  top: 18px;
+  left: 14px;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 999px;
+  background: #0e6470;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.mobile-drawer-close span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 4px;
+  border-radius: 999px;
+  background: #fff;
+  transform-origin: center;
+}
+
+.mobile-drawer-close span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mobile-drawer-close span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.mobile-drawer-decor {
+  position: absolute;
+  left: 12px;
+  bottom: 28px;
+  display: grid;
+  gap: 34px;
+}
+
+.mobile-drawer-decor i {
+  width: 58px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(13, 121, 132, 0.76);
+}
+
+.mobile-drawer-decor i:nth-child(odd) {
+  width: 30px;
+}
+
+.mobile-drawer-panel {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(78vw, 440px);
+  min-height: 72vh;
+  border-radius: 34px 0 0 34px;
+  background: linear-gradient(165deg, #edf7f9, #d8ecf0);
+  box-shadow: -16px 0 36px rgba(8, 62, 75, 0.18);
+  display: flex;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.mobile-drawer-nav {
+  margin-left: auto;
+  width: 100%;
+  display: grid;
+  gap: 22px;
+}
+
+.mobile-drawer-nav a {
+  color: #0f3541;
+  font-size: clamp(24px, 6.4vw, 34px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  background: #f7fbfc;
+  border: 1px solid #d8eaee;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
 .hero-overlay {
   position: absolute;
-  inset: 84px 0 0;
+  inset: 0;
   background: radial-gradient(circle at 30% 70%, rgba(6, 105, 114, 0.6) 0, rgba(6, 105, 114, 0.35) 33%, rgba(6, 105, 114, 0) 67%);
 }
 
@@ -311,6 +456,63 @@ h1 em {
 
   .brand {
     font-size: 26px;
+  }
+
+  .nav-burger {
+    display: inline-block;
+  }
+
+  .call-pill {
+    display: none;
+  }
+
+  .nav-burger {
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+  }
+
+  .nav-burger span {
+    height: 3px;
+    margin: 5px 0;
+  }
+
+  .mobile-drawer-close {
+    width: 52px;
+    height: 52px;
+    top: 12px;
+    left: 10px;
+  }
+
+  .mobile-drawer-close span {
+    width: 24px;
+    height: 4px;
+  }
+
+  .mobile-drawer-panel {
+    width: min(82vw, 360px);
+    min-height: 68vh;
+    border-radius: 24px 0 0 24px;
+    padding: 24px 14px;
+  }
+
+  .mobile-drawer-nav a {
+    font-size: clamp(21px, 7.5vw, 28px);
+  }
+
+  .mobile-drawer-decor {
+    left: 8px;
+    bottom: 18px;
+    gap: 26px;
+  }
+
+  .mobile-drawer-decor i {
+    width: 50px;
+    height: 4px;
+  }
+
+  .mobile-drawer-decor i:nth-child(odd) {
+    width: 26px;
   }
 
   .call-pill strong {

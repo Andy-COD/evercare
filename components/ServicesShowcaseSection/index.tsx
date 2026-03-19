@@ -1,4 +1,5 @@
 import styles from "./ServicesShowcaseSection.module.css";
+import Image from "next/image";
 
 const sections = [
   {
@@ -38,7 +39,7 @@ const sections = [
 
 export default function ServicesShowcaseSection() {
   return (
-    <section className={styles.section}>
+    <section id="services" className={styles.section}>
       <div className={styles.headWrap}>
         <p className={styles.kicker}>OUR SERVICES</p>
         <h2 className={styles.title}>
@@ -77,7 +78,7 @@ export default function ServicesShowcaseSection() {
             </div>
 
             <div className={styles.imageWrap}>
-              <img src={service.image} alt={service.imageAlt} loading="lazy" />
+              <Image src={service.image} alt={service.imageAlt} loading="lazy" width={500} height={500} />
             </div>
           </article>
         ))}
