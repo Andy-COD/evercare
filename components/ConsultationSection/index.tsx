@@ -2,6 +2,7 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import styles from "./ConsultationSection.module.css";
+import SuccessModal from "@/components/SuccessModal";
 
 type FormValues = {
   fullName: string;
@@ -137,111 +138,119 @@ export default function ConsultationSection() {
   const fieldError = (field: keyof FormValues) => (touched[field] ? errors[field] : undefined);
 
   return (
-    <section id="contact" className={styles.section}>
-      <div className={styles.panel}>
-        <div className={styles.left}>
-          <h2>
-            Get personalised
-            <br />
-            <span>home care</span> today
-          </h2>
-          <p>
-            Begin your care journey with support tailored to your needs. We&apos;ll create a
-            personalised plan and match you with a trusted carer so you feel safe and
-            supported at home.
-          </p>
+    <>
+      <section id="contact" className={styles.section}>
+        <div className={styles.panel}>
+          <div className={styles.left}>
+            <h2>
+              Get personalised
+              <br />
+              <span>home care</span> today
+            </h2>
+            <p>
+              Begin your care journey with support tailored to your needs. We&apos;ll create a
+              personalised plan and match you with a trusted carer so you feel safe and
+              supported at home.
+            </p>
 
-          <div className={styles.photoStrip}>
-            <div className={`${styles.photo} ${styles.photoOne}`} />
-            <div className={`${styles.photo} ${styles.photoTwo}`} />
+            <div className={styles.photoStrip}>
+              <div className={`${styles.photo} ${styles.photoOne}`} />
+              <div className={`${styles.photo} ${styles.photoTwo}`} />
+            </div>
+          </div>
+
+          <div className={styles.formCard}>
+            <h3>✦ BOOK A FREE CONSULTATION ✦</h3>
+            <form onSubmit={handleSubmit} noValidate>
+              <div className={styles.field}>
+                <label htmlFor="fullName">Full name</label>
+                <input
+                  id="fullName"
+                  type="text"
+                  placeholder="eg. John Wick"
+                  value={values.fullName}
+                  onChange={(event) => handleChange("fullName", event)}
+                  onBlur={() => handleBlur("fullName")}
+                  aria-invalid={Boolean(fieldError("fullName"))}
+                />
+                {fieldError("fullName") && <p className={styles.error}>{fieldError("fullName")}</p>}
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="email">Email address</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="eg. john@example.com"
+                  value={values.email}
+                  onChange={(event) => handleChange("email", event)}
+                  onBlur={() => handleBlur("email")}
+                  aria-invalid={Boolean(fieldError("email"))}
+                />
+                {fieldError("email") && <p className={styles.error}>{fieldError("email")}</p>}
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="phone">Phone number</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="eg. +44 7123 456 789"
+                  value={values.phone}
+                  onChange={(event) => handleChange("phone", event)}
+                  onBlur={() => handleBlur("phone")}
+                  aria-invalid={Boolean(fieldError("phone"))}
+                />
+                {fieldError("phone") && <p className={styles.error}>{fieldError("phone")}</p>}
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="careType">Care type</label>
+                <select
+                  id="careType"
+                  value={values.careType}
+                  onChange={(event) => handleChange("careType", event)}
+                  onBlur={() => handleBlur("careType")}
+                  aria-invalid={Boolean(fieldError("careType"))}
+                >
+                  <option value="">Select service</option>
+                  <option value="home-care">Home care</option>
+                  <option value="live-in-care">Live-in care</option>
+                  <option value="respite-care">Respite care</option>
+                </select>
+                {fieldError("careType") && <p className={styles.error}>{fieldError("careType")}</p>}
+              </div>
+
+              <div className={styles.field}>
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  placeholder="Tell us what support you need"
+                  value={values.message}
+                  onChange={(event) => handleChange("message", event)}
+                  onBlur={() => handleBlur("message")}
+                  aria-invalid={Boolean(fieldError("message"))}
+                />
+                {fieldError("message") && <p className={styles.error}>{fieldError("message")}</p>}
+              </div>
+
+              <button type="submit" className={styles.submitBtn} disabled={submitting}>
+                {submitting ? "Submitting..." : "Request Consultation"}
+              </button>
+
+              {submitError && <p className={styles.error}>{submitError}</p>}
+            </form>
           </div>
         </div>
+      </section>
 
-        <div className={styles.formCard}>
-          <h3>✦ BOOK A FREE CONSULTATION ✦</h3>
-          <form onSubmit={handleSubmit} noValidate>
-            <div className={styles.field}>
-              <label htmlFor="fullName">Full name</label>
-              <input
-                id="fullName"
-                type="text"
-                placeholder="eg. John Wick"
-                value={values.fullName}
-                onChange={(event) => handleChange("fullName", event)}
-                onBlur={() => handleBlur("fullName")}
-                aria-invalid={Boolean(fieldError("fullName"))}
-              />
-              {fieldError("fullName") && <p className={styles.error}>{fieldError("fullName")}</p>}
-            </div>
-
-            <div className={styles.field}>
-              <label htmlFor="email">Email address</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="eg. john@example.com"
-                value={values.email}
-                onChange={(event) => handleChange("email", event)}
-                onBlur={() => handleBlur("email")}
-                aria-invalid={Boolean(fieldError("email"))}
-              />
-              {fieldError("email") && <p className={styles.error}>{fieldError("email")}</p>}
-            </div>
-
-            <div className={styles.field}>
-              <label htmlFor="phone">Phone number</label>
-              <input
-                id="phone"
-                type="tel"
-                placeholder="eg. +44 7123 456 789"
-                value={values.phone}
-                onChange={(event) => handleChange("phone", event)}
-                onBlur={() => handleBlur("phone")}
-                aria-invalid={Boolean(fieldError("phone"))}
-              />
-              {fieldError("phone") && <p className={styles.error}>{fieldError("phone")}</p>}
-            </div>
-
-            <div className={styles.field}>
-              <label htmlFor="careType">Care type</label>
-              <select
-                id="careType"
-                value={values.careType}
-                onChange={(event) => handleChange("careType", event)}
-                onBlur={() => handleBlur("careType")}
-                aria-invalid={Boolean(fieldError("careType"))}
-              >
-                <option value="">Select service</option>
-                <option value="home-care">Home care</option>
-                <option value="live-in-care">Live-in care</option>
-                <option value="respite-care">Respite care</option>
-              </select>
-              {fieldError("careType") && <p className={styles.error}>{fieldError("careType")}</p>}
-            </div>
-
-            <div className={styles.field}>
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                rows={4}
-                placeholder="Tell us what support you need"
-                value={values.message}
-                onChange={(event) => handleChange("message", event)}
-                onBlur={() => handleBlur("message")}
-                aria-invalid={Boolean(fieldError("message"))}
-              />
-              {fieldError("message") && <p className={styles.error}>{fieldError("message")}</p>}
-            </div>
-
-            <button type="submit" className={styles.submitBtn} disabled={submitting}>
-              {submitting ? "Submitting..." : "Request Consultation"}
-            </button>
-
-            {submitError && <p className={styles.error}>{submitError}</p>}
-            {successMessage && <p className={styles.success}>{successMessage}</p>}
-          </form>
-        </div>
-      </div>
-    </section>
+      <SuccessModal
+        isOpen={Boolean(successMessage)}
+        title="Consultation booked"
+        message={successMessage ?? ""}
+        onClose={() => setSuccessMessage(null)}
+      />
+    </>
   );
 }

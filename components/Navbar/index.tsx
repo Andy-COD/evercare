@@ -12,40 +12,6 @@ function getRouteHeroElement(pathname: string): HTMLElement | null {
   return document.querySelector<HTMLElement>(".homecare-hero");
 }
 
-function getRouteBackground(pathname: string): string {
-  if (pathname.startsWith("/about")) {
-    const aboutHero = document.querySelector<HTMLElement>(".storySection");
-    if (aboutHero) {
-      const style = window.getComputedStyle(aboutHero);
-      if (style.backgroundImage && style.backgroundImage !== "none") {
-        return style.backgroundImage;
-      }
-      if (style.backgroundColor && style.backgroundColor !== "rgba(0, 0, 0, 0)") {
-        return style.backgroundColor;
-      }
-    }
-    return "#f3f4f6";
-  }
-
-  const shell = document.querySelector<HTMLElement>(".homecare-shell");
-  if (shell) {
-    const style = window.getComputedStyle(shell);
-    if (style.backgroundImage && style.backgroundImage !== "none") {
-      return style.backgroundImage;
-    }
-  }
-
-  const hero = document.querySelector<HTMLElement>(".homecare-hero");
-  if (hero) {
-    const style = window.getComputedStyle(hero);
-    if (style.backgroundImage && style.backgroundImage !== "none") {
-      return style.backgroundImage;
-    }
-  }
-
-  return "#ffffff";
-}
-
 export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
@@ -65,11 +31,6 @@ export default function Navbar() {
       nav.style.removeProperty("left");
       nav.style.removeProperty("top");
       nav.style.removeProperty("width");
-    };
-
-    const applyRouteBackground = () => {
-      const routeBg = getRouteBackground(pathname);
-      nav.style.setProperty("--active-route-hero-bg", routeBg);
     };
 
     const updateSticky = () => {
@@ -111,15 +72,12 @@ export default function Navbar() {
       rafId = window.requestAnimationFrame(updateSticky);
     };
 
-    applyRouteBackground();
     updateSticky();
-    window.requestAnimationFrame(applyRouteBackground);
     window.addEventListener("scroll", onScrollOrResize, { passive: true });
     window.addEventListener("resize", onScrollOrResize);
 
     return () => {
       clearSticky();
-      nav.style.removeProperty("--active-route-hero-bg");
       if (rafId) window.cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);

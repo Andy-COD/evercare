@@ -13,10 +13,12 @@
 }
 
 body {
-  background: var(--background);
+  background: #fff;
   color: var(--foreground);
   font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -45,7 +47,7 @@ a {
 .homecare-nav {
   position: relative;
   z-index: 2;
-  margin: 22px;
+  margin: 0;
   border-radius: 28px;
   background: #fff;
   height: 84px;
@@ -67,13 +69,13 @@ a {
   margin: 0;
   z-index: 40;
   border-radius: 0;
-  background: var(--active-route-hero-bg, #fff);
+  background: #fff;
   box-shadow: 0 2px 14px rgba(9, 32, 42, 0.1);
 }
 
 .homecare-nav-main-sticky .brand,
 .homecare-nav-main-sticky .menu {
-  color: #effbfc;
+  color: #17393d;
 }
 
 .brand {

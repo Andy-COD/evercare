@@ -1,6 +1,8 @@
+"use server";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import ConsultationEmail from "@/components/emails/ConsultaionTemplate";
+import { render } from "@react-email/components";
 
 type ContactPayload = {
   fullName: string;
@@ -92,20 +94,22 @@ export async function POST(request: Request) {
 
     const resend = new Resend(resendApiKey);
 
-    const { error: resendError } = await resend.emails.send({
+    const html = await render(ConsultationEmail({
+      providerName: process.env.PROVIDER_NAME ?? "Dr. Linda S.",
+      fullName: body.fullName,
+      email: body.email,
+      phone: body.phone,
+      careType: body.careType,
+      message: body.message,
+      companyName: process.env.COMPANY_NAME ?? "Ever Care",
+    }));
+
+    const { data, error: resendError } = await resend.emails.send({
       from: contactFromEmail,
       to: contactToEmail,
       subject: `New Consultation Request from ${body.fullName}`,
       replyTo: body.email,
-      react: ConsultationEmail({
-        providerName: process.env.PROVIDER_NAME ?? "Dr. Linda S.",
-        fullName: body.fullName,
-        email: body.email,
-        phone: body.phone,
-        careType: body.careType,
-        message: body.message,
-        companyName: process.env.COMPANY_NAME ?? "Ever Care",
-      }),
+      html,
     });
 
     if (resendError) {
@@ -121,10 +125,11 @@ export async function POST(request: Request) {
       sent: true,
       message: "Thanks, your consultation request has been sent successfully.",
     });
-  } catch {
+  } catch (error) {
+    console.error("Failed to send consultation email.", error);
     return NextResponse.json<ApiResponse>(
-      { ok: false, error: "Invalid request body." },
-      { status: 400 },
+      { ok: false, error: "Failed to send consultation email." },
+      { status: 500 },
     );
   }
 }
