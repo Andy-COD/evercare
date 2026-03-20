@@ -10,7 +10,7 @@
   min-height: clamp(320px, 33vw, 520px);
   border-radius: 24px;
   background-image: linear-gradient(0deg, rgba(240, 247, 252, 0.12), rgba(240, 247, 252, 0.12)),
-    url("https://images.unsplash.com/photo-1576765608622-067973a79f53?auto=format&fit=crop&w=1800&q=80");
+    url("/images/child-care.png");
   background-size: cover;
   background-position: center;
 }
@@ -103,19 +103,19 @@
 }
 
 .benefitImageOne {
-  background-image: url("https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80");
+  background-image: url("/images/old-man.png");
 }
 
 .benefitImageTwo {
-  background-image: url("https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1200&q=80");
+  background-image: url("/images/elder-family.png");
 }
 
 .benefitImageThree {
-  background-image: url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80");
+  background-image: url("/images/tools.png");
 }
 
 .benefitImageFour {
-  background-image: url("https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=1200&q=80");
+  background-image: url("/images/old-man.png");
 }
 
 .benefitsText {

@@ -35,13 +35,13 @@ export default function WhyAimsSection() {
             </div>
             <h3>QCQ Regulated</h3>
             <p>
-              Over 20 years of reliable, CQC-regulated home care across Surrey.
+              Over 20 years of reliable, CQC-regulated home care across Ghana.
             </p>
           </article>
 
           <article className={styles.card}>
             <div className={styles.iconBox}>⌖</div>
-            <h3>Covering All Areas Of Surrey</h3>
+            <h3>Covering All Areas Of Ghana</h3>
             <p>
               From Leatherhead to Dorking and Epsom, just give us a call to
               confirm.

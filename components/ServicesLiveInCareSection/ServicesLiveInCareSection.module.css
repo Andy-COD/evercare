@@ -10,7 +10,7 @@
   min-height: clamp(420px, 42vw, 720px);
   border-radius: 28px;
   background-image: linear-gradient(180deg, rgba(235, 244, 247, 0.06), rgba(235, 244, 247, 0.06)),
-    url("https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1800&q=80");
+    url("/images/elder-family.png");
   background-size: cover;
   background-position: center;
   box-shadow: 0 24px 54px rgba(18, 79, 95, 0.09);

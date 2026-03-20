@@ -62,7 +62,7 @@
   border-radius: 26px;
   overflow: hidden;
   background-image: linear-gradient(0deg, rgba(20, 30, 42, 0.2), rgba(20, 30, 42, 0.2)),
-    url("https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1800&q=80");
+    url("/images/child-care.png");
   background-size: cover;
   background-position: center;
   display: grid;

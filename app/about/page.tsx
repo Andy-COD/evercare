@@ -9,7 +9,7 @@ export default function AboutPage() {
         <h1>
           A trusted care partner for
           <br />
-          <span>families</span> across surrey
+          <span>families</span> across Ghana
         </h1>
 
         <p className={styles.lead}>
@@ -111,7 +111,7 @@ export default function AboutPage() {
           <div className={styles.founderPortraitWrap}>
             <Image
               fill
-              src="/images/founder.jpg"
+              src="/images/founder-longer.png"
               alt="Founder portrait"
               quality={100}
               priority
