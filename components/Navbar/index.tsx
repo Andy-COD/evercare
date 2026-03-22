@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -88,7 +89,22 @@ export default function Navbar() {
     <>
       <header ref={navRef} className="homecare-nav">
         <div className="brand">
-          <span className="brand-mark">❦</span>
+          <span className="brand-mark" aria-hidden="true">
+            <Image
+              className="brand-mark-image brand-mark-image-light"
+              src="/images/favicon-light.png"
+              alt=""
+              width={36}
+              height={36}
+            />
+            <Image
+              className="brand-mark-image brand-mark-image-dark"
+              src="/images/favicon-dark.png"
+              alt=""
+              width={36}
+              height={36}
+            />
+          </span>
           <span>Ever Care</span>
         </div>
         <nav className="menu">
