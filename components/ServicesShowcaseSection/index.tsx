@@ -1,5 +1,6 @@
 import styles from "./ServicesShowcaseSection.module.css";
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 const sections = [
   {
@@ -40,7 +41,7 @@ const sections = [
 export default function ServicesShowcaseSection() {
   return (
     <section id="services" className={styles.section}>
-      <div className={styles.headWrap}>
+      <Reveal as="div" className={styles.headWrap}>
         <p className={styles.kicker}>OUR SERVICES</p>
         <h2 className={styles.title}>
           Care that fits
@@ -52,11 +53,16 @@ export default function ServicesShowcaseSection() {
           tailored to your needs so you can feel safe, supported, and confident
           at home.
         </p>
-      </div>
+      </Reveal>
 
       <div className={styles.listWrap}>
-        {sections.map((service) => (
-          <article className={styles.serviceCard} key={service.chip}>
+        {sections.map((service, index) => (
+          <Reveal
+            as="article"
+            className={styles.serviceCard}
+            key={service.chip}
+            delay={120 + index * 90}
+          >
             <div className={styles.content}>
               <div className={styles.titleRow}>
                 <h3>
@@ -80,7 +86,7 @@ export default function ServicesShowcaseSection() {
             <div className={styles.imageWrap}>
               <Image src={service.image} alt={service.imageAlt} loading="lazy" width={500} height={500} />
             </div>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

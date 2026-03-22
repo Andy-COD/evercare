@@ -3,6 +3,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import styles from "./ConsultationSection.module.css";
 import SuccessModal from "@/components/SuccessModal";
+import Reveal from "@/components/Reveal";
 
 type FormValues = {
   fullName: string;
@@ -141,7 +142,7 @@ export default function ConsultationSection() {
     <>
       <section id="contact" className={styles.section}>
         <div className={styles.panel}>
-          <div className={styles.left}>
+          <Reveal as="div" className={styles.left} variant="left">
             <h2>
               Get personalised
               <br />
@@ -157,9 +158,9 @@ export default function ConsultationSection() {
               <div className={`${styles.photo} ${styles.photoOne}`} />
               <div className={`${styles.photo} ${styles.photoTwo}`} />
             </div>
-          </div>
+          </Reveal>
 
-          <div className={styles.formCard}>
+          <Reveal as="div" className={styles.formCard} variant="right" delay={120}>
             <h3>✦ BOOK A FREE CONSULTATION ✦</h3>
             <form onSubmit={handleSubmit} noValidate>
               <div className={styles.field}>
@@ -241,7 +242,7 @@ export default function ConsultationSection() {
 
               {submitError && <p className={styles.error}>{submitError}</p>}
             </form>
-          </div>
+          </Reveal>
         </div>
       </section>
 

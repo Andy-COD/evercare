@@ -1,4 +1,5 @@
 import styles from "./ServicesRespiteCareSection.module.css";
+import Reveal from "@/components/Reveal";
 
 const respitePoints = [
   {
@@ -18,7 +19,7 @@ const respitePoints = [
 export default function ServicesRespiteCareSection() {
   return (
     <section id="respite-care" className={styles.section}>
-      <div className={styles.inner}>
+      <Reveal as="div" className={styles.inner}>
         <div className={styles.headingBlock}>
           <p className={styles.kicker}>✦ RESPITE CARE</p>
           <h2>
@@ -35,25 +36,31 @@ export default function ServicesRespiteCareSection() {
         </div>
 
         <div className={styles.contentGrid}>
-          <div className={styles.summaryCard}>
+          <Reveal as="div" className={styles.summaryCard} variant="left" delay={120}>
             <div className={styles.summaryImage} />
             <p>
               Whether you need a few hours to catch your breath or a longer
               period of cover, respite care keeps routines steady, reduces
               stress, and helps families sustain care with confidence.
             </p>
-          </div>
+          </Reveal>
 
           <div className={styles.pointsColumn}>
-            {respitePoints.map((point) => (
-              <article key={point.title} className={styles.pointCard}>
+            {respitePoints.map((point, index) => (
+              <Reveal
+                as="article"
+                key={point.title}
+                className={styles.pointCard}
+                variant="right"
+                delay={180 + index * 70}
+              >
                 <h3>{point.title}</h3>
                 <p>{point.text}</p>
-              </article>
+              </Reveal>
             ))}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

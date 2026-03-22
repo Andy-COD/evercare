@@ -1,4 +1,5 @@
 import styles from "./DifferenceSection.module.css";
+import Reveal from "@/components/Reveal";
 
 const values = [
   {
@@ -26,7 +27,7 @@ const values = [
 export default function DifferenceSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.headWrap}>
+      <Reveal as="div" className={styles.headWrap}>
         <p className={styles.kicker}>THE DIFFERENCE WE BRING</p>
         <h2 className={styles.title}>
           Your <span>well-being</span> is
@@ -40,22 +41,28 @@ export default function DifferenceSection() {
           for at home.
         </p>
         <div className={styles.divider} />
-      </div>
+      </Reveal>
 
       <div className={styles.grid}>
-        <article className={styles.mediaCard}>
+        <Reveal as="article" className={styles.mediaCard} variant="left" delay={120}>
           <button className={styles.playButton} aria-label="Play video" type="button">
             ▶
           </button>
-        </article>
+        </Reveal>
 
         <div className={styles.valueGrid}>
-          {values.map((value) => (
-            <article key={value.title} className={styles.valueCard}>
+          {values.map((value, index) => (
+            <Reveal
+              as="article"
+              key={value.title}
+              className={styles.valueCard}
+              variant="right"
+              delay={160 + index * 70}
+            >
               <span className={styles.icon}>{value.icon}</span>
               <h3>{value.title}</h3>
               <p>{value.body}</p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "./TestimonialHighlightsSection.module.css";
+import Reveal from "@/components/Reveal";
 
 export default function TestimonialHighlightsSection() {
   return (
     <section className={styles.section}>
-      <div className={styles.headWrap}>
+      <Reveal as="div" className={styles.headWrap}>
         <p className={styles.kicker}>TESTIMONIAL HIGHLIGHTS</p>
         <h2 className={styles.title}>
           Trusted by <span>families</span>
@@ -27,22 +28,22 @@ export default function TestimonialHighlightsSection() {
           <span className={styles.stars}>★★★★★</span>
           <span className={styles.trustText}>Trusted by 2,000+ Customers</span>
         </div>
-      </div>
+      </Reveal>
 
       <div className={styles.cardsGrid}>
         <div className={styles.metricsCol}>
-          <article className={styles.metricCard}>
+          <Reveal as="article" className={styles.metricCard} delay={120}>
             <h3>500+</h3>
             <p>Areas covered across Ghana</p>
-          </article>
+          </Reveal>
 
-          <article className={styles.metricCard}>
+          <Reveal as="article" className={styles.metricCard} delay={200}>
             <h3>20+</h3>
             <p>Years of experience delivering high-quality domiciliary care across Ghana.</p>
-          </article>
+          </Reveal>
         </div>
 
-        <article className={styles.featureCard}>
+        <Reveal as="article" className={styles.featureCard} delay={180}>
           <p className={styles.cardKicker}>PATIENT REVIEW</p>
           <h3>How Ever Care Home-care helped me achieve healthy goals</h3>
           <Image
@@ -53,9 +54,9 @@ export default function TestimonialHighlightsSection() {
             height={1000}
           />
           <span className={styles.cornerDot} />
-        </article>
+        </Reveal>
 
-        <article className={styles.impactCard}>
+        <Reveal as="article" className={styles.impactCard} delay={260}>
           <p className={styles.cardKicker}>IMPACT METRICS</p>
           <Image
             src="/images/child-care.png"
@@ -71,7 +72,7 @@ export default function TestimonialHighlightsSection() {
               ▶
             </button>
           </div>
-        </article>
+        </Reveal>
       </div>
     </section>
   );

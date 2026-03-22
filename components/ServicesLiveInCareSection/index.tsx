@@ -1,4 +1,5 @@
 import styles from "./ServicesLiveInCareSection.module.css";
+import Reveal from "@/components/Reveal";
 
 const supportPoints = [
   "A dedicated carer living in the home for consistent day and night reassurance.",
@@ -10,9 +11,9 @@ const supportPoints = [
 export default function ServicesLiveInCareSection() {
   return (
     <section id="live-in-care" className={styles.section}>
-      <div className={styles.mediaCard} />
+      <Reveal as="div" className={styles.mediaCard} variant="left" />
 
-      <div className={styles.copy}>
+      <Reveal as="div" className={styles.copy} variant="right" delay={100}>
         <p className={styles.kicker}>✦ LIVE-IN CARE</p>
         <h2>
           Full-time support with
@@ -29,14 +30,14 @@ export default function ServicesLiveInCareSection() {
         </p>
 
         <div className={styles.pointGrid}>
-          {supportPoints.map((point) => (
-            <div key={point} className={styles.pointCard}>
+          {supportPoints.map((point, index) => (
+            <Reveal key={point} className={styles.pointCard} delay={160 + index * 60}>
               <span className={styles.pointIcon}>✦</span>
               <p>{point}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

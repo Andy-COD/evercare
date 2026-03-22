@@ -1,18 +1,21 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Reveal from "@/components/Reveal";
 
 export default function AboutPage() {
   return (
     <main className={styles.page}>
       <section className={styles.storySection}>
-        <p className={styles.kicker}>✦ OUR STORY</p>
-        <h1>
+        <Reveal as="p" className={styles.kicker}>
+          ✦ OUR STORY
+        </Reveal>
+        <Reveal as="h1" delay={80}>
           A trusted care partner for
           <br />
           <span>families</span> across Ghana
-        </h1>
+        </Reveal>
 
-        <p className={styles.lead}>
+        <Reveal as="p" className={styles.lead} delay={140}>
           For more than <strong>2 years</strong>, we have supported families
           with reliable, CQC-regulated care built on compassion, respect, and
           professionalism. Our journey began with a simple mission to offer
@@ -20,21 +23,24 @@ export default function AboutPage() {
           deserve. Today, we continue that mission by delivering tailored
           support shaped around each person&apos;s needs, routines, and
           preferences.
-        </p>
+        </Reveal>
 
-        <p className={styles.lead}>
+        <Reveal as="p" className={styles.lead} delay={220}>
           We believe great care starts with real people. No long call centre
           queues, no faceless systems. Just fast, effective support from a team
           that knows your name and understands your needs. When you call us, you
           speak directly to someone who can help, and your service starts
           quickly, often within days, not weeks.
-        </p>
+        </Reveal>
 
-        <div className={styles.divider} />
+        <Reveal as="div" className={styles.divider} delay={260} />
 
         <div className={styles.mosaic}>
-          <div
+          <Reveal
+            as="div"
             className={`${styles.tile} ${styles.imageTile} ${styles.leftTop}`}
+            variant="left"
+            delay={120}
           >
             <Image
               width={1400}
@@ -43,8 +49,8 @@ export default function AboutPage() {
               alt="Older woman with family member smiling"
               className={styles.tileImage}
             />
-          </div>
-          <article className={`${styles.tile} ${styles.centerTop}`}>
+          </Reveal>
+          <Reveal as="article" className={`${styles.tile} ${styles.centerTop}`} delay={180}>
             <div className={styles.wreathRow}>
               <span className={styles.wreath}>❦</span>
               <div>
@@ -60,9 +66,12 @@ export default function AboutPage() {
               long-standing experience ensures quality, and genuine support in
               every visit.
             </p>
-          </article>
-          <div
+          </Reveal>
+          <Reveal
+            as="div"
             className={`${styles.tile} ${styles.imageTile} ${styles.rightTop}`}
+            variant="right"
+            delay={240}
           >
             <Image
               width={1400}
@@ -71,9 +80,11 @@ export default function AboutPage() {
               alt="Caregiver and elderly woman laughing together"
               className={styles.tileImage}
             />
-          </div>
-          <div
+          </Reveal>
+          <Reveal
+            as="div"
             className={`${styles.tile} ${styles.imageTile} ${styles.leftBottom}`}
+            delay={160}
           >
             <Image
               width={1400}
@@ -82,9 +93,11 @@ export default function AboutPage() {
               alt="Care worker supporting elderly woman at home"
               className={styles.tileImage}
             />
-          </div>
-          <div
+          </Reveal>
+          <Reveal
+            as="div"
             className={`${styles.tile} ${styles.imageTile} ${styles.centerBottom}`}
+            delay={220}
           >
             <Image
               width={1400}
@@ -93,9 +106,11 @@ export default function AboutPage() {
               alt="Caregiver assisting elderly person in community setting"
               className={styles.tileImage}
             />
-          </div>
-          <div
+          </Reveal>
+          <Reveal
+            as="div"
             className={`${styles.tile} ${styles.imageTile} ${styles.rightBottom}`}
+            delay={280}
           >
             <Image
               width={1400}
@@ -104,11 +119,11 @@ export default function AboutPage() {
               alt="Nurse helping a senior walk with support frame"
               className={styles.tileImage}
             />
-          </div>
+          </Reveal>
         </div>
 
         <section className={styles.founderSection}>
-          <div className={styles.founderPortraitWrap}>
+          <Reveal as="div" className={styles.founderPortraitWrap} variant="left">
             <Image
               fill
               src="/images/founder-longer.png"
@@ -118,9 +133,9 @@ export default function AboutPage() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className={styles.founderPortrait}
             />
-          </div>
+          </Reveal>
 
-          <div className={styles.founderCopy}>
+          <Reveal as="div" className={styles.founderCopy} variant="right" delay={100}>
             <p className={styles.kicker}>✦ FOUNDER BIO</p>
             <h2>
               Meet the heart behind
@@ -148,7 +163,7 @@ export default function AboutPage() {
               <strong>Linda S.</strong>
               <span>Founder, Ever Care</span>
             </div>
-          </div>
+          </Reveal>
         </section>
       </section>
     </main>

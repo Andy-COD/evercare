@@ -415,6 +415,52 @@ h1 em {
   }
 }
 
+.reveal {
+  --reveal-distance: 30px;
+  --reveal-delay: 0ms;
+  opacity: 0;
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+  transition-delay: var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translateY(var(--reveal-distance));
+}
+
+.reveal-left {
+  transform: translateX(calc(var(--reveal-distance) * -1));
+}
+
+.reveal-right {
+  transform: translateX(var(--reveal-distance));
+}
+
+.reveal-scale {
+  transform: translateY(18px) scale(0.97);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .fade-in,
+  .delay-1,
+  .delay-2,
+  .delay-3,
+  .delay-4 {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 1280px) {
   .menu {
     display: none;

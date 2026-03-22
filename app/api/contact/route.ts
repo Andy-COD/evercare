@@ -104,7 +104,7 @@ export async function POST(request: Request) {
       companyName: process.env.COMPANY_NAME ?? "Ever Care",
     }));
 
-    const { data, error: resendError } = await resend.emails.send({
+    const { error: resendError } = await resend.emails.send({
       from: contactFromEmail,
       to: contactToEmail,
       subject: `New Consultation Request from ${body.fullName}`,

@@ -1,12 +1,13 @@
 import styles from "./ServicesDomiciliaryIntro.module.css";
+import Reveal from "@/components/Reveal";
 
 export default function ServicesDomiciliaryIntro() {
   return (
-    <>
+      <>
       <section className={styles.section}>
-        <div className={styles.imageCard} />
+        <Reveal as="div" className={styles.imageCard} variant="left" />
 
-        <div className={styles.copy}>
+        <Reveal as="div" className={styles.copy} variant="right" delay={100}>
           <h2>
             What is <em>domiciliary</em> <em>care?</em>
           </h2>
@@ -16,11 +17,11 @@ export default function ServicesDomiciliaryIntro() {
             prompts, companionship, and routines, so people can stay safe,
             independent, and comfortable in familiar surroundings.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section id="coverage" className={styles.benefitsSection}>
-        <div className={styles.benefitsInner}>
+        <Reveal as="div" className={styles.benefitsInner}>
           <h3>
             The benefits of<span>domiciliary care</span>
           </h3>
@@ -31,10 +32,10 @@ export default function ServicesDomiciliaryIntro() {
           <div className={styles.benefitsDivider} />
 
           <div className={styles.benefitsGrid}>
-            <div className={`${styles.benefitImage} ${styles.benefitImageOne}`} />
-            <div className={`${styles.benefitImage} ${styles.benefitImageTwo}`} />
-            <div className={`${styles.benefitImage} ${styles.benefitImageThree}`} />
-            <div className={`${styles.benefitImage} ${styles.benefitImageFour}`} />
+            <Reveal as="div" className={`${styles.benefitImage} ${styles.benefitImageOne}`} delay={120} />
+            <Reveal as="div" className={`${styles.benefitImage} ${styles.benefitImageTwo}`} delay={190} />
+            <Reveal as="div" className={`${styles.benefitImage} ${styles.benefitImageThree}`} delay={260} />
+            <Reveal as="div" className={`${styles.benefitImage} ${styles.benefitImageFour}`} delay={330} />
           </div>
 
           <p className={styles.benefitsText}>
@@ -48,7 +49,7 @@ export default function ServicesDomiciliaryIntro() {
             Simply put, they get everything they need to live a healthy,
             meaningful life at home.
           </p>
-        </div>
+        </Reveal>
       </section>
     </>
   );
