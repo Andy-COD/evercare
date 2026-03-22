@@ -739,3 +739,116 @@ h1 em {
     margin-bottom: 28px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .homecare-shell {
+    background: linear-gradient(140deg, #0c252b, #0a3b42 40%, #082f39);
+  }
+
+  .homecare-hero {
+    background-image: linear-gradient(100deg, rgba(2, 19, 24, 0.94) 0%, rgba(4, 46, 56, 0.88) 43%, rgba(5, 89, 103, 0.34) 70%, rgba(7, 126, 139, 0.18) 100%),
+      url("/images/hand-holding.png");
+  }
+
+  .homecare-nav,
+  .homecare-nav-main-sticky {
+    background: #0d1f25;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.28);
+  }
+
+  .homecare-nav-main-sticky .brand,
+  .homecare-nav-main-sticky .menu,
+  .brand,
+  .menu {
+    color: #e4f5f7;
+  }
+
+  .call-pill {
+    color: #082127;
+    background: linear-gradient(90deg, #8fd7df, #63bcc7);
+  }
+
+  .call-icon {
+    background: #0e2a31;
+    color: #c8edf1;
+  }
+
+  .nav-burger {
+    background: linear-gradient(135deg, #87d3dc, #57b4bf);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
+  }
+
+  .mobile-drawer-backdrop {
+    background: rgba(1, 7, 11, 0.58);
+  }
+
+  .mobile-drawer {
+    background: radial-gradient(circle at 22% 26%, rgba(54, 116, 126, 0.28), rgba(3, 26, 33, 0.84));
+  }
+
+  .mobile-drawer-close {
+    background: #8cd7df;
+  }
+
+  .mobile-drawer-close span {
+    background: #072027;
+  }
+
+  .mobile-drawer-decor i {
+    background: rgba(126, 208, 220, 0.55);
+  }
+
+  .mobile-drawer-panel {
+    background: linear-gradient(165deg, #0e2026, #15323a);
+    box-shadow: -16px 0 36px rgba(0, 0, 0, 0.36);
+  }
+
+  .mobile-drawer-nav a {
+    color: #e3f5f7;
+    background: #132a31;
+    border-color: #234550;
+  }
+
+  .hero-overlay {
+    background: radial-gradient(circle at 30% 70%, rgba(3, 35, 43, 0.72) 0, rgba(6, 105, 114, 0.3) 33%, rgba(6, 105, 114, 0) 67%);
+  }
+
+  .hero-content,
+  h1 {
+    color: #f3fbfc;
+  }
+
+  .review-pill {
+    color: #e4f5f7;
+    background: rgba(66, 124, 135, 0.26);
+    border-color: rgba(123, 191, 202, 0.42);
+  }
+
+  .hero-copy {
+    color: rgba(227, 245, 247, 0.94);
+  }
+
+  .btn-primary {
+    color: #dff5f7;
+    background: #103038;
+  }
+
+  .btn-secondary {
+    color: #d9eef1;
+    border-color: rgba(133, 209, 220, 0.4);
+    background: rgba(56, 107, 117, 0.3);
+  }
+
+  .trust-row {
+    color: #d9eef1;
+  }
+
+  .cqc-pill {
+    border-color: rgba(143, 214, 223, 0.28);
+    background: rgba(7, 45, 51, 0.5);
+  }
+
+  .avatars i {
+    border-color: #0b181d;
+  }
+}
