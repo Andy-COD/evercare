@@ -137,3 +137,30 @@
     border-radius: 16px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .inner {
+    background: radial-gradient(circle at 16% 12%, rgba(29, 109, 102, 0.8) 0%, rgba(8, 73, 81, 0.98) 40%, rgba(9, 54, 76, 1) 100%);
+  }
+
+  .kicker {
+    border-color: rgba(122, 196, 205, 0.5);
+    background: rgba(74, 132, 141, 0.18);
+    color: rgba(232, 246, 248, 0.96);
+  }
+
+  .summaryCard {
+    background: rgba(8, 25, 31, 0.32);
+    border-color: rgba(152, 217, 226, 0.16);
+  }
+
+  .pointCard {
+    background: rgba(11, 28, 35, 0.94);
+    color: #e3f4f7;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+  }
+
+  .pointCard p {
+    color: #b8ccd4;
+  }
+}

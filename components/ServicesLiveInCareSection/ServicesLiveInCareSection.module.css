@@ -115,3 +115,38 @@
     border-radius: 16px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .mediaCard {
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.26);
+  }
+
+  .kicker {
+    border-color: #29414c;
+    background: #12242b;
+    color: #a0b7c2;
+  }
+
+  .copy h2,
+  .pointCard p {
+    color: #e2f4f6;
+  }
+
+  .copy h2 em {
+    color: #81d4dd;
+  }
+
+  .lead {
+    color: #b8ccd4;
+  }
+
+  .pointCard {
+    border-color: #23404a;
+    background: linear-gradient(180deg, #112228 0%, #0c1b21 100%);
+  }
+
+  .pointIcon {
+    background: rgba(129, 212, 221, 0.14);
+    color: #97e1e8;
+  }
+}

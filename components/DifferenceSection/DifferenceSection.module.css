@@ -178,3 +178,54 @@
     font-size: clamp(16px, 4.4vw, 22px);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    background: #0a1419;
+  }
+
+  .kicker {
+    border-color: #29414c;
+    color: #a3b9c3;
+    background: rgba(19, 37, 44, 0.65);
+  }
+
+  .title,
+  .valueCard h3 {
+    color: #e3f4f7;
+  }
+
+  .title span {
+    color: #81d4dd;
+  }
+
+  .subtitle,
+  .valueCard p {
+    color: #b8ccd4;
+  }
+
+  .divider {
+    background: #243842;
+  }
+
+  .mediaCard {
+    background-image: linear-gradient(0deg, rgba(7, 13, 20, 0.44), rgba(7, 13, 20, 0.44)),
+      url("/images/child-care.png");
+  }
+
+  .playButton {
+    border-color: rgba(222, 243, 246, 0.36);
+    background: rgba(10, 27, 34, 0.42);
+  }
+
+  .valueCard {
+    border-color: #24414b;
+    background: linear-gradient(180deg, #12323a 0%, #0e2026 100%);
+  }
+
+  .icon {
+    background: #15282f;
+    border-color: #28444e;
+    color: #90dbe4;
+  }
+}

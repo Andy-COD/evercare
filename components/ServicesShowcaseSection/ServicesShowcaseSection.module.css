@@ -221,3 +221,55 @@
     min-height: 250px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    background: radial-gradient(circle at 50% 0, rgba(35, 92, 101, 0.42) 0%, rgba(5, 48, 54, 0.98) 62%);
+  }
+
+  .headWrap {
+    color: #dff4f7;
+  }
+
+  .kicker {
+    border-color: rgba(127, 196, 205, 0.5);
+    background: rgba(59, 112, 121, 0.24);
+  }
+
+  .title {
+    color: #eaf8fa;
+  }
+
+  .subtitle {
+    color: rgba(220, 241, 244, 0.9);
+  }
+
+  .serviceCard {
+    background: #0f2026;
+    border-color: #23404a;
+  }
+
+  .titleRow h3,
+  .bullets li {
+    color: #e2f4f6;
+  }
+
+  .titleRow h3 span,
+  .bullets li::before {
+    color: #81d4dd;
+  }
+
+  .chip {
+    background: #8fd7df;
+    color: #082228;
+  }
+
+  .arrow {
+    background: #173039;
+    color: #d1eef2;
+  }
+
+  .description {
+    color: #b8ccd4;
+  }
+}

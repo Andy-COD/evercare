@@ -98,3 +98,50 @@
     height: 74px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .overlay {
+    background: rgba(2, 10, 14, 0.62);
+  }
+
+  .modal {
+    background:
+      radial-gradient(circle at 14% 12%, rgba(63, 140, 132, 0.32), rgba(63, 140, 132, 0) 32%),
+      linear-gradient(180deg, #112228 0%, #0c1b21 100%);
+    border-color: rgba(63, 104, 112, 0.9);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+  }
+
+  .badge {
+    border-color: #28434d;
+    background: rgba(14, 30, 36, 0.82);
+    color: #a8c0cb;
+  }
+
+  .iconWrap {
+    background: linear-gradient(180deg, #8dd6df 0%, #58b7c1 100%);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
+  }
+
+  .icon {
+    color: #072027;
+  }
+
+  .modal h3 {
+    color: #e4f4f7;
+  }
+
+  .modal p {
+    color: #b8ccd4;
+  }
+
+  .closeButton {
+    background: linear-gradient(180deg, #8fd7df 0%, #5ebcc7 100%);
+    color: #082228;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  }
+
+  .closeButton:hover {
+    background: linear-gradient(180deg, #9be0e7 0%, #69c5cf 100%);
+  }
+}

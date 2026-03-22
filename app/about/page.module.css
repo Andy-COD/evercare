@@ -269,6 +269,62 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .page {
+    background: #0a1419;
+  }
+
+  .kicker {
+    border-color: #29414c;
+    color: #9eb8c5;
+    background: rgba(19, 37, 44, 0.7);
+  }
+
+  .storySection h1,
+  .founderCopy h2,
+  .founderSignature strong {
+    color: #e4f4f7;
+  }
+
+  .storySection h1 span,
+  .founderCopy h2 span {
+    color: #7fd4de;
+  }
+
+  .lead,
+  .founderLead {
+    color: #c1d5dc;
+  }
+
+  .founderText,
+  .founderSignature span {
+    color: #94aebb;
+  }
+
+  .divider {
+    background: #233842;
+  }
+
+  .imageTile,
+  .founderPortraitWrap {
+    background: #12242b;
+  }
+
+  .centerTop {
+    background: radial-gradient(circle at 16% 12%, rgba(50, 123, 112, 0.88) 0%, rgba(10, 84, 93, 0.94) 42%, rgba(8, 56, 79, 0.98) 100%);
+    color: #e8f6f8;
+  }
+
+  .wreath {
+    color: rgba(232, 246, 248, 0.9);
+  }
+
+  .founderCopy {
+    background: linear-gradient(180deg, #112228, #0c1b21);
+    border-color: #23404a;
+  }
+}
+
 @media (max-width: 760px) {
   .storySection {
     padding: 18px 10px 70px;

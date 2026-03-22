@@ -175,3 +175,25 @@
     font-size: clamp(19px, 5vw, 24px);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .copy h2 {
+    color: #e3f4f7;
+  }
+
+  .copy h2 span {
+    color: #8dbfe2;
+  }
+
+  .copy h2 em {
+    color: #81d4dd;
+  }
+
+  .copy p {
+    color: #b8ccd4;
+  }
+
+  .benefitsSection {
+    background: radial-gradient(circle at 18% 16%, rgba(28, 109, 102, 0.76), rgba(8, 75, 83, 0.96) 42%, rgba(11, 59, 84, 0.95) 100%);
+  }
+}

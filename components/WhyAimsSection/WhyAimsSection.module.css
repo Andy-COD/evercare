@@ -163,3 +163,55 @@
     font-size: clamp(16px, 4.4vw, 22px);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .section {
+    background: #0a1419;
+  }
+
+  .kicker {
+    border-color: #29414c;
+    color: #9bb4bf;
+    background: rgba(19, 37, 44, 0.65);
+  }
+
+  .title,
+  .card h3 {
+    color: #e2f4f6;
+  }
+
+  .title span {
+    color: #81d4dd;
+  }
+
+  .subtitle,
+  .card p {
+    color: #b8ccd4;
+  }
+
+  .divider {
+    background: #243842;
+  }
+
+  .imagePanel {
+    background-image:
+      linear-gradient(180deg, rgba(2, 17, 24, 0.12) 0%, rgba(2, 48, 58, 0.48) 70%, rgba(3, 54, 61, 0.96) 100%),
+      url("/images/hand-holding.png");
+  }
+
+  .card {
+    background: #112228;
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .iconBox {
+    color: #9ce0e7;
+    background: #17303a;
+  }
+
+  .badge {
+    border-color: #2d4a56;
+    color: #d3ebef;
+    background: rgba(16, 34, 40, 0.55);
+  }
+}

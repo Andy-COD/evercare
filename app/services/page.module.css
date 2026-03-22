@@ -141,3 +141,44 @@
     font-size: clamp(20px, 5vw, 26px);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    background: #091419;
+  }
+
+  .heroOverlay {
+    background: linear-gradient(90deg, rgba(3, 27, 34, 0.96) 0%, rgba(4, 60, 69, 0.92) 44%, rgba(5, 89, 103, 0.45) 70%, rgba(5, 89, 103, 0.14) 100%);
+  }
+
+  .heroContent {
+    color: #e8f6f8;
+  }
+
+  .kicker {
+    border-color: rgba(119, 192, 202, 0.52);
+    background: rgba(61, 116, 126, 0.28);
+  }
+
+  .heroContent p {
+    color: rgba(225, 244, 246, 0.92);
+  }
+
+  .copyWrap h2 {
+    color: #e3f4f7;
+  }
+
+  .copyWrap p {
+    color: #b8ced6;
+  }
+
+  .ctaButton {
+    background: #90d6de;
+    color: #082228;
+  }
+
+  .ctaIcon {
+    background: #173039;
+    color: #c5edf1;
+  }
+}
