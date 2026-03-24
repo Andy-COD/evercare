@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Reveal from "@/components/Reveal";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "About Ever Care",
+  description:
+    "Learn more about Ever Care, our mission, and the compassionate approach behind our trusted home care services for families across Ghana.",
+  path: "/about",
+  keywords: [
+    "about Ever Care",
+    "home care agency Ghana",
+    "care team Ghana",
+    "elderly care company Ghana",
+  ],
+});
 
 export default function AboutPage() {
   return (

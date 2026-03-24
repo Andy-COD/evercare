@@ -1,10 +1,28 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { absoluteUrl, buildMetadata, siteMetadata } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ever Care",
-  description: "Ever Care is a home care agency that provides care to the elderly and the disabled.",
+  metadataBase: new URL(absoluteUrl("/")),
+  ...buildMetadata({
+    title: "Ever Care | Home Care Services in Ghana",
+    description:
+      "Ever Care provides compassionate home care, live-in care, respite care, and personalised support for families across Ghana.",
+    path: "/",
+    keywords: [
+      "home care Ghana",
+      "live-in care Ghana",
+      "respite care Ghana",
+      "elderly care Ghana",
+      "domiciliary care Ghana",
+      "Ever Care",
+    ],
+  }),
+  title: {
+    default: "Ever Care | Home Care Services in Ghana",
+    template: "%s | Ever Care",
+  },
   icons: {
     icon: [
       {
@@ -21,6 +39,19 @@ export const metadata: Metadata = {
     shortcut: "/images/favicon-light.png?v=20260322",
     apple: "/images/favicon-light.png?v=20260322",
   },
+  applicationName: "Ever Care",
+  category: "healthcare",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -28,8 +59,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HomeHealthCare",
+    name: siteMetadata.siteName,
+    description: siteMetadata.defaultDescription,
+    areaServed: "Ghana",
+    url: absoluteUrl("/"),
+    logo: absoluteUrl("/images/favicon-light.png"),
+    image: absoluteUrl(siteMetadata.defaultOgImage),
+    sameAs: [],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteMetadata.siteName,
+    url: absoluteUrl("/"),
+    description: siteMetadata.defaultDescription,
+    inLanguage: "en-GH",
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       <body className="antialiased">
         <Navbar />
         {children}
