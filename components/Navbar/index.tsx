@@ -88,7 +88,7 @@ export default function Navbar() {
   return (
     <>
       <header ref={navRef} className="homecare-nav">
-        <div className="brand">
+        <Link href="/" className="brand" aria-label="Ever Care home">
           <span className="brand-mark" aria-hidden="true">
             <Image
               className="brand-mark-image brand-mark-image-light"
@@ -106,17 +106,17 @@ export default function Navbar() {
             />
           </span>
           <span>Ever Care</span>
-        </div>
+        </Link>
         <nav className="menu">
           <Link href="/">Home</Link>
           <Link href="/about">About us</Link>
           <Link href="/services">Services +</Link>
           <Link href="/contact">Contact us</Link>
         </nav>
-        <a className="call-pill" href="tel:+11234567890">
+        <a className="call-pill" href="tel:+233202111606">
           <span className="call-icon">☎</span>
           <span>
-            <strong>123 4567 890</strong>
+            <strong>+233 202 111 606</strong>
             <small>CALL US</small>
           </span>
         </a>
@@ -156,6 +156,17 @@ export default function Navbar() {
         </div>
         <div className="mobile-drawer-panel">
           <nav className="mobile-drawer-nav">
+            <a
+              className="mobile-drawer-call-pill"
+              href="tel:+233202111606"
+              onClick={() => setDrawerOpen(false)}
+            >
+              <span className="call-icon">☎</span>
+              <span>
+                <strong>+233 202 111 606</strong>
+                <small>CALL US</small>
+              </span>
+            </a>
             <Link href="/about" onClick={() => setDrawerOpen(false)}>
               About
             </Link>

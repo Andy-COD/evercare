@@ -248,6 +248,14 @@ a {
   background: linear-gradient(90deg, #0d8e96, #0a7880);
 }
 
+.call-pill > span:last-child,
+.mobile-drawer-call-pill > span:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 .call-pill strong {
   display: block;
   font-size: 18px;
@@ -407,6 +415,22 @@ a {
   border: 1px solid #d8eaee;
   border-radius: 12px;
   padding: 10px 12px;
+}
+
+.mobile-drawer-call-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-start;
+  color: #fff;
+  background: linear-gradient(90deg, #0d8e96, #0a7880) !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  padding: 14px 16px !important;
+}
+
+.mobile-drawer-call-pill .call-icon {
+  flex: 0 0 auto;
 }
 
 .hero-overlay {
@@ -607,6 +631,14 @@ h1 em {
     display: none;
   }
 
+  .call-pill {
+    display: none;
+  }
+
+  .nav-burger {
+    display: inline-block;
+  }
+
   .homecare-nav {
     height: auto;
     padding: 14px 18px;
@@ -643,14 +675,6 @@ h1 em {
 
   .brand {
     font-size: 26px;
-  }
-
-  .nav-burger {
-    display: inline-block;
-  }
-
-  .call-pill {
-    display: none;
   }
 
   .nav-burger {
