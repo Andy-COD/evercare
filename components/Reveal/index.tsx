@@ -2,7 +2,7 @@
 
 import {
   type CSSProperties,
-  type JSX,
+  ElementType,
   type ReactNode,
   useCallback,
   useEffect,
@@ -10,8 +10,8 @@ import {
 } from "react";
 
 type RevealProps = {
-  as?: keyof JSX.IntrinsicElements;
-  children: ReactNode;
+  as?: ElementType;
+  children?: ReactNode;
   className?: string;
   delay?: number;
   variant?: "up" | "left" | "right" | "scale";
