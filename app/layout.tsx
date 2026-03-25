@@ -27,17 +27,17 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/images/favicon-light.png?v=20260322",
+        url: "/images/favicon.png?v=20260325",
         type: "image/png",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/images/favicon-dark.png?v=20260322",
+        url: "/images/favicon.png?v=20260325",
         type: "image/png",
       },
     ],
-    shortcut: "/images/favicon-light.png?v=20260322",
-    apple: "/images/favicon-light.png?v=20260322",
+    shortcut: "/images/favicon.png?v=20260325",
+    apple: "/images/favicon.png?v=20260325",
   },
   applicationName: "Ever Care",
   category: "healthcare",
@@ -66,7 +66,7 @@ export default function RootLayout({
     description: siteMetadata.defaultDescription,
     areaServed: "Ghana",
     url: absoluteUrl("/"),
-    logo: absoluteUrl("/images/favicon-light.png"),
+    logo: absoluteUrl("/images/logo-light.png"),
     image: absoluteUrl(siteMetadata.defaultOgImage),
     sameAs: [],
   };

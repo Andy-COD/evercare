@@ -10,7 +10,7 @@ import { absoluteUrl, buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Home Care Services in Ghana",
   description:
-    "Discover trusted home care, live-in care, and respite services from Ever Care. We support families across Ghana with compassionate, personalised care at home.",
+    "Discover home care, live-in care, and respite services from Ever Care. We are building a compassionate, personalised care service for families across Ghana.",
   path: "/",
   keywords: [
     "home care services Ghana",
@@ -29,7 +29,7 @@ export default function Home() {
     url: absoluteUrl("/"),
     areaServed: "Ghana",
     description:
-      "Ever Care provides home care, live-in care, respite care, and personalised support for families across Ghana.",
+      "Ever Care offers home care, live-in care, respite care, and personalised support for families across Ghana.",
     serviceType: ["Home care", "Live-in care", "Respite care"],
   };
 

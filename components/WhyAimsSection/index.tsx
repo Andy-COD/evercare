@@ -32,11 +32,12 @@ export default function WhyAimsSection() {
           <Reveal as="article" className={styles.card} delay={260}>
             <div className={styles.cardTop}>
               <div className={styles.iconBox}>Q</div>
-              <span className={styles.badge}>* GOOD</span>
+              <span className={styles.badge}>* NEW</span>
             </div>
-            <h3>QCQ Regulated</h3>
+            <h3>Thoughtful Beginnings</h3>
             <p>
-              Over 20 years of reliable, CQC-regulated home care across Ghana.
+              We&apos;re building our service with care, transparency, and a strong
+              commitment to doing things well from the start.
             </p>
           </Reveal>
 
@@ -44,8 +45,8 @@ export default function WhyAimsSection() {
             <div className={styles.iconBox}>⌖</div>
             <h3>Covering All Areas Of Ghana</h3>
             <p>
-              From Leatherhead to Dorking and Epsom, just give us a call to
-              confirm.
+              We&apos;re currently growing our coverage. Get in touch to confirm
+              availability in your area.
             </p>
           </Reveal>
         </div>

@@ -17,7 +17,7 @@ const sections = [
       "Companionship care",
     ],
     image:
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1800&q=80",
+      "/images/hand-holding.png",
     imageAlt: "Carer assisting an older adult at home",
   },
   {
@@ -33,7 +33,7 @@ const sections = [
       "Short term respite care",
     ],
     image:
-      "https://images.unsplash.com/photo-1559234938-b60fff04894d?auto=format&fit=crop&w=1800&q=80",
+      "/images/walk.png",
     imageAlt: "Carer supporting an elderly woman in a living room",
   },
 ];

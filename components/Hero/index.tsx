@@ -7,11 +7,11 @@ export default function Hero() {
 
       <div className="hero-content">
         <h1 className="fade-in delay-2">
-          Ghana&apos;s most trusted <em>home care</em> agency
+          Thoughtful <em>home care</em> support for families in Ghana
         </h1>
         <p className="hero-copy fade-in delay-3">
-          Quality, compassion, and reliability trusted by families across Ghana
-          for exceptional home care tailored to every need.
+          We&apos;re just getting started, with a simple focus on compassionate,
+          reliable support tailored to each family&apos;s needs.
         </p>
         <div className="hero-actions fade-in delay-4">
           <Link href="/contact" className="btn btn-primary">

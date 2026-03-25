@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "About Ever Care",
   description:
-    "Learn more about Ever Care, our mission, and the compassionate approach behind our trusted home care services for families across Ghana.",
+    "Learn more about Ever Care, our mission, and the compassionate approach behind our growing home care service for families across Ghana.",
   path: "/about",
   keywords: [
     "about Ever Care",
@@ -25,27 +25,26 @@ export default function AboutPage() {
           ✦ OUR STORY
         </Reveal>
         <Reveal as="h1" delay={80}>
-          A trusted care partner for
+          A growing care partner for
           <br />
           <span>families</span> across Ghana
         </Reveal>
 
         <Reveal as="p" className={styles.lead} delay={140}>
-          For more than <strong>2 years</strong>, we have supported families
-          with reliable, CQC-regulated care built on compassion, respect, and
-          professionalism. Our journey began with a simple mission to offer
-          people the dignity of staying at home while receiving the care they
-          deserve. Today, we continue that mission by delivering tailored
-          support shaped around each person&apos;s needs, routines, and
-          preferences.
+          Ever Care is at the beginning of its journey, building a care service
+          rooted in compassion, respect, and professionalism. We started with a
+          simple mission: to help people remain at home with the dignity,
+          reassurance, and support they deserve. As we grow, we&apos;re focused
+          on offering thoughtful care shaped around each person&apos;s needs,
+          routines, and preferences.
         </Reveal>
 
         <Reveal as="p" className={styles.lead} delay={220}>
           We believe great care starts with real people. No long call centre
           queues, no faceless systems. Just fast, effective support from a team
-          that knows your name and understands your needs. When you call us, you
-          speak directly to someone who can help, and your service starts
-          quickly, often within days, not weeks.
+          that wants to know your name and understand your needs. When you call
+          us, you speak directly to someone who can help and guide you through
+          the next steps with clarity and care.
         </Reveal>
 
         <Reveal as="div" className={styles.divider} delay={260} />
@@ -65,21 +64,27 @@ export default function AboutPage() {
               className={styles.tileImage}
             />
           </Reveal>
-          <Reveal as="article" className={`${styles.tile} ${styles.centerTop}`} delay={180}>
+          <Reveal
+            as="article"
+            className={`${styles.tile} ${styles.centerTop}`}
+            delay={180}
+          >
             <div className={styles.wreathRow}>
               <span className={styles.wreath}>❦</span>
               <div>
-                <p className={styles.years}>2+</p>
-                <p className={styles.yearsLabel}>years</p>
+                <p className={styles.years}>Starting Strong</p>
+                {/* <p className={styles.yearsLabel}>starting strong</p> */}
               </div>
               <span className={styles.wreath}>❦</span>
             </div>
-            <h2>OF EXCELLENCE</h2>
+            <h2>OUR BEGINNING</h2>
             <p>
-              For over two decades, we&apos;ve been committed to delivering
-              compassionate, reliable care that families can trust. Our
-              long-standing experience ensures quality, and genuine support in
-              every visit.
+              We&apos;re in the early stages of building Ever Care with
+              intention, warmth, and a deep commitment to providing dependable,
+              compassionate support for every family we serve. Our vision is
+              rooted in dignity, trust, and genuine human connection—ensuring
+              that every individual feels seen, valued, and cared for in the
+              comfort of their own home.
             </p>
           </Reveal>
           <Reveal
@@ -138,7 +143,11 @@ export default function AboutPage() {
         </div>
 
         <section className={styles.founderSection}>
-          <Reveal as="div" className={styles.founderPortraitWrap} variant="left">
+          <Reveal
+            as="div"
+            className={styles.founderPortraitWrap}
+            variant="left"
+          >
             <Image
               fill
               src="/images/founder-longer.png"
@@ -150,7 +159,12 @@ export default function AboutPage() {
             />
           </Reveal>
 
-          <Reveal as="div" className={styles.founderCopy} variant="right" delay={100}>
+          <Reveal
+            as="div"
+            className={styles.founderCopy}
+            variant="right"
+            delay={100}
+          >
             <p className={styles.kicker}>✦ FOUNDER BIO</p>
             <h2>
               Meet the heart behind
@@ -170,12 +184,13 @@ export default function AboutPage() {
               rather than one-size-fits-all schedules.
             </p>
             <p className={styles.founderText}>
-              Today, that same philosophy continues to guide every visit. We
-              take time to listen, match each client carefully, and create
-              support that feels reassuring, respectful, and genuinely human.
+              As Ever Care begins to grow, that same philosophy guides every
+              step. We take time to listen, match each client carefully, and
+              create support that feels reassuring, respectful, and genuinely
+              human.
             </p>
             <div className={styles.founderSignature}>
-              <strong>Linda S.</strong>
+              <strong>Linda Siaw.</strong>
               <span>Founder, Ever Care</span>
             </div>
           </Reveal>

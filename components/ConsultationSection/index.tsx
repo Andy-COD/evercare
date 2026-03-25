@@ -149,9 +149,9 @@ export default function ConsultationSection() {
               <span>home care</span> today
             </h2>
             <p>
-              Begin your care journey with support tailored to your needs. We&apos;ll create a
-              personalised plan and match you with a trusted carer so you feel safe and
-              supported at home.
+              Begin your care journey with support tailored to your needs. As a
+              growing service, we&apos;ll work closely with you to create a
+              personalised plan so you can feel safe and supported at home.
             </p>
 
             <div className={styles.photoStrip}>

@@ -8,38 +8,38 @@ export default function TestimonialHighlightsSection() {
       <Reveal as="div" className={styles.headWrap}>
         <p className={styles.kicker}>TESTIMONIAL HIGHLIGHTS</p>
         <h2 className={styles.title}>
-          Trusted by <span>families</span>
+          Built with <span>families</span>
           <br />
           across Ghana
         </h2>
         <p className={styles.subtitle}>
-          Families across Ghana rely on us for compassionate, reliable care that
-          truly makes a difference. From daily support to full-time live-in care,
-          our dedicated team is committed to delivering comfort, safety, and
-          peace of mind right at home.
+          We&apos;re a new service shaped by compassion, reliability, and the kind
+          of support families want to feel at home. From daily help to live-in
+          care, we&apos;re building each experience with comfort, safety, and peace
+          of mind in focus.
         </p>
         <div className={styles.divider} />
 
-        <div className={styles.reviewPill}>✦ 9.7 Reviews on <em>homecare.co.uk</em></div>
+        <div className={styles.reviewPill}>✦ New care service, growing with every family we support</div>
 
         <div className={styles.trustRow}>
-          <span className={styles.cqc}>CareQuality Commission</span>
+          <span className={styles.cqc}>Compassionate support</span>
           <span className={styles.people}>👨🏽 👨🏻 👩🏽 👩🏻</span>
           <span className={styles.stars}>★★★★★</span>
-          <span className={styles.trustText}>Trusted by 2,000+ Customers</span>
+          <span className={styles.trustText}>Focused on earning trust one family at a time</span>
         </div>
       </Reveal>
 
       <div className={styles.cardsGrid}>
         <div className={styles.metricsCol}>
           <Reveal as="article" className={styles.metricCard} delay={120}>
-            <h3>500+</h3>
-            <p>Areas covered across Ghana</p>
+            <h3>New</h3>
+            <p>A growing service shaped with care and intention</p>
           </Reveal>
 
           <Reveal as="article" className={styles.metricCard} delay={200}>
-            <h3>20+</h3>
-            <p>Years of experience delivering high-quality domiciliary care across Ghana.</p>
+            <h3>1:1</h3>
+            <p>Personal support as we build meaningful relationships with every family.</p>
           </Reveal>
         </div>
 
@@ -66,8 +66,8 @@ export default function TestimonialHighlightsSection() {
             height={500}
           />
           <div className={styles.overlay}>
-            <h3>98%</h3>
-            <p>Satisfaction Rate</p>
+            <h3>Early</h3>
+            <p>Building a service families can feel confident choosing</p>
             <button type="button" aria-label="Play testimonial video">
               ▶
             </button>

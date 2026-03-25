@@ -71,6 +71,14 @@ a {
   box-shadow: 0 2px 14px rgba(9, 32, 42, 0.1);
 }
 
+.homecare-nav-page-fixed {
+  border-radius: 0;
+}
+
+.homecare-nav-spacer {
+  height: 84px;
+}
+
 .homecare-nav-main-sticky .brand,
 .homecare-nav-main-sticky .menu {
   color: #17393d;
@@ -78,36 +86,21 @@ a {
 
 .brand {
   display: flex;
-  gap: 10px;
   align-items: center;
-  font-size: 36px;
-  font-family: var(--font-cormorant-garamond), serif;
-  color: #143f42;
+  line-height: 0;
 }
 
-.brand-mark {
-  position: relative;
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
+.brand-logo {
   display: block;
-}
-
-.brand-mark-image {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: 68px;
   object-fit: contain;
 }
 
-.brand-mark-image-light {
-  display: block;
-}
-
-.brand-mark-image-dark {
-  display: none;
+.brand-logo-dark-mode {
+  height: 78px;
+  transform: scale(2.28);
+  transform-origin: left center;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -156,14 +149,6 @@ a {
   .nav-burger {
     background: linear-gradient(135deg, #87d3dc, #57b4bf);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
-  }
-
-  .brand-mark-image-light {
-    display: none;
-  }
-
-  .brand-mark-image-dark {
-    display: block;
   }
 
   .mobile-drawer-backdrop {
@@ -674,7 +659,16 @@ h1 em {
   }
 
   .brand {
-    font-size: 26px;
+    max-width: 190px;
+  }
+
+  .brand-logo {
+    height: 56px;
+  }
+
+  .brand-logo-dark-mode {
+    height: 64px;
+    transform: scale(1.68);
   }
 
   .nav-burger {

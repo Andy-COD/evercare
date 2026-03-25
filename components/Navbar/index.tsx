@@ -17,10 +17,38 @@ export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const isHomePage = pathname === "/";
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const updateTheme = () => setIsDarkMode(mediaQuery.matches);
+
+    updateTheme();
+    mediaQuery.addEventListener("change", updateTheme);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateTheme);
+    };
+  }, []);
 
   useEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
+
+    if (!isHomePage) {
+      nav.classList.add("homecare-nav-main-sticky", "homecare-nav-page-fixed");
+      nav.style.left = "0px";
+      nav.style.top = "0px";
+      nav.style.width = "100%";
+
+      return () => {
+        nav.classList.remove("homecare-nav-main-sticky", "homecare-nav-page-fixed");
+        nav.style.removeProperty("left");
+        nav.style.removeProperty("top");
+        nav.style.removeProperty("width");
+      };
+    }
 
     const topOffset = 0;
     const heroInset = 22;
@@ -83,29 +111,20 @@ export default function Navbar() {
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);
     };
-  }, [pathname]);
+  }, [isHomePage, pathname]);
 
   return (
     <>
       <header ref={navRef} className="homecare-nav">
         <Link href="/" className="brand" aria-label="Ever Care home">
-          <span className="brand-mark" aria-hidden="true">
-            <Image
-              className="brand-mark-image brand-mark-image-light"
-              src="/images/favicon-light.png"
-              alt=""
-              width={36}
-              height={36}
-            />
-            <Image
-              className="brand-mark-image brand-mark-image-dark"
-              src="/images/favicon-dark.png"
-              alt=""
-              width={36}
-              height={36}
-            />
-          </span>
-          <span>Ever Care</span>
+          <Image
+            className={`brand-logo${isDarkMode ? " brand-logo-dark-mode" : ""}`}
+            src={isDarkMode ? "/images/logo-dark.png" : "/images/logo-light.png"}
+            alt="Ever Care"
+            width={180}
+            height={64}
+            priority
+          />
         </Link>
         <nav className="menu">
           <Link href="/">Home</Link>
@@ -133,6 +152,7 @@ export default function Navbar() {
           <span />
         </button>
       </header>
+      {!isHomePage ? <div className="homecare-nav-spacer" aria-hidden="true" /> : null}
 
       <div
         className={`mobile-drawer-backdrop${drawerOpen ? " mobile-drawer-backdrop-open" : ""}`}
