@@ -155,6 +155,7 @@ export default function Navbar() {
           <Link href="/contact">Contact us</Link>
         </nav>
         <button type="button" className="call-pill" onClick={() => setCallModalOpen(true)}>
+          <span className="call-icon" aria-hidden="true">☎</span>
           <span className="call-pill-label">Call us</span>
         </button>
 
@@ -202,6 +203,7 @@ export default function Navbar() {
                 setCallModalOpen(true);
               }}
             >
+              <span className="call-icon" aria-hidden="true">☎</span>
               <span className="call-pill-label">Call us</span>
             </button>
             <Link href="/about" onClick={() => setDrawerOpen(false)}>
