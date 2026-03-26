@@ -17,8 +17,30 @@ export default function Navbar() {
   const navRef = useRef<HTMLElement>(null);
   const pathname = usePathname();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [callModalOpen, setCallModalOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const isHomePage = pathname === "/";
+
+  useEffect(() => {
+    if (!callModalOpen) {
+      return;
+    }
+
+    const originalOverflow = document.body.style.overflow;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setCallModalOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [callModalOpen]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -132,13 +154,9 @@ export default function Navbar() {
           <Link href="/services">Services +</Link>
           <Link href="/contact">Contact us</Link>
         </nav>
-        <a className="call-pill" href="tel:+233202111606">
-          <span className="call-icon">☎</span>
-          <span>
-            <strong>+233 202 111 606</strong>
-            <small>CALL US</small>
-          </span>
-        </a>
+        <button type="button" className="call-pill" onClick={() => setCallModalOpen(true)}>
+          <span className="call-pill-label">Call us</span>
+        </button>
 
         <button
           type="button"
@@ -176,17 +194,16 @@ export default function Navbar() {
         </div>
         <div className="mobile-drawer-panel">
           <nav className="mobile-drawer-nav">
-            <a
+            <button
+              type="button"
               className="mobile-drawer-call-pill"
-              href="tel:+233202111606"
-              onClick={() => setDrawerOpen(false)}
+              onClick={() => {
+                setDrawerOpen(false);
+                setCallModalOpen(true);
+              }}
             >
-              <span className="call-icon">☎</span>
-              <span>
-                <strong>+233 202 111 606</strong>
-                <small>CALL US</small>
-              </span>
-            </a>
+              <span className="call-pill-label">Call us</span>
+            </button>
             <Link href="/about" onClick={() => setDrawerOpen(false)}>
               About
             </Link>
@@ -199,6 +216,49 @@ export default function Navbar() {
           </nav>
         </div>
       </aside>
+
+      {callModalOpen ? (
+        <div
+          className="call-modal-overlay"
+          onClick={() => setCallModalOpen(false)}
+          role="presentation"
+        >
+          <div
+            className="call-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="call-modal-title"
+            aria-describedby="call-modal-description"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="call-modal-badge">✦ CALL EVERCARE</div>
+            <h3 id="call-modal-title">Choose a number to call</h3>
+            <p id="call-modal-description">
+              Select the line you&apos;d like to contact and your device will
+              start the call.
+            </p>
+
+            <div className="call-modal-actions">
+              <a className="call-option" href="tel:+233202111606">
+                <span className="call-option-label">Call line 1</span>
+                <strong>+233 202 111 606</strong>
+              </a>
+              <a className="call-option" href="tel:+233242542220">
+                <span className="call-option-label">Call line 2</span>
+                <strong>+233 242 542 220</strong>
+              </a>
+            </div>
+
+            <button
+              type="button"
+              className="call-modal-close"
+              onClick={() => setCallModalOpen(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }
