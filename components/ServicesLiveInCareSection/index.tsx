@@ -8,6 +8,8 @@ const supportPoints = [
   "Flexible care plans that adapt as needs change without leaving home.",
 ];
 
+const featuredServices = ["Palliative care support", "Disability support"];
+
 export default function ServicesLiveInCareSection() {
   return (
     <section id="live-in-care" className={styles.section}>
@@ -37,6 +39,15 @@ export default function ServicesLiveInCareSection() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal as="div" className={styles.serviceHighlight} delay={420}>
+          <p className={styles.serviceLabel}>Included live-in services</p>
+          <ul className={styles.serviceList}>
+            {featuredServices.map((service) => (
+              <li key={service}>{service}</li>
+            ))}
+          </ul>
+        </Reveal>
       </Reveal>
     </section>
   );

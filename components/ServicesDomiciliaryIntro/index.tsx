@@ -1,9 +1,14 @@
 import styles from "./ServicesDomiciliaryIntro.module.css";
 import Reveal from "@/components/Reveal";
 
+const domiciliaryServices = [
+  "Assistance with self care deficit",
+  "Regular medication assistance",
+];
+
 export default function ServicesDomiciliaryIntro() {
   return (
-      <>
+    <>
       <section className={styles.section}>
         <Reveal as="div" className={styles.imageCard} variant="left" />
 
@@ -49,6 +54,15 @@ export default function ServicesDomiciliaryIntro() {
             Simply put, they get everything they need to live a healthy,
             meaningful life at home.
           </p>
+
+          <Reveal as="div" className={styles.serviceHighlight} delay={220}>
+            <p className={styles.serviceLabel}>Included domiciliary services</p>
+            <ul className={styles.serviceList}>
+              {domiciliaryServices.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </Reveal>
         </Reveal>
       </section>
     </>

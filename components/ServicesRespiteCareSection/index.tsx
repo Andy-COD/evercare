@@ -16,6 +16,8 @@ const respitePoints = [
   },
 ];
 
+const respiteServices = ["Post-operative care support"];
+
 export default function ServicesRespiteCareSection() {
   return (
     <section id="respite-care" className={styles.section}>
@@ -58,6 +60,20 @@ export default function ServicesRespiteCareSection() {
                 <p>{point.text}</p>
               </Reveal>
             ))}
+
+            <Reveal
+              as="article"
+              className={styles.pointCard}
+              variant="right"
+              delay={390}
+            >
+              <h3>Included respite services</h3>
+              <ul className={styles.serviceList}>
+                {respiteServices.map((service) => (
+                  <li key={service}>{service}</li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
       </Reveal>
