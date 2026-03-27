@@ -10,7 +10,7 @@ export default function Hero() {
           Thoughtful <em>home care</em> support for families in Ghana
         </h1>
         <p className="hero-copy fade-in delay-3">
-          We&apos;re just getting started, with a simple focus on compassionate,
+          We are just getting started, with a simple focus on compassionate,
           reliable support tailored to each family&apos;s needs.
         </p>
         <div className="hero-actions fade-in delay-4">

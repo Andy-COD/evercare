@@ -236,7 +236,7 @@ export default function Navbar() {
             <div className="call-modal-badge">✦ CALL EVERCARE</div>
             <h3 id="call-modal-title">Choose a number to call</h3>
             <p id="call-modal-description">
-              Select the line you&apos;d like to contact and your device will
+              Select the line you would like to contact and your device will
               start the call.
             </p>
 

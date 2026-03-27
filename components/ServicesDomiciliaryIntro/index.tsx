@@ -44,7 +44,7 @@ export default function ServicesDomiciliaryIntro() {
           </div>
 
           <p className={styles.benefitsText}>
-            But it doesn&apos;t stop there. They also receive one-to-one care,
+            But it does not stop there. They also receive one-to-one care,
             help with daily tasks, support with bathing and meals,
             companionship, and someone to keep them socially connected. All
             while enjoying a safe, familiar environment proven to support better

@@ -13,9 +13,9 @@ export default function TestimonialHighlightsSection() {
           across Ghana
         </h2>
         <p className={styles.subtitle}>
-          We&apos;re a new service shaped by compassion, reliability, and the kind
+          We are a new service shaped by compassion, reliability, and the kind
           of support families want to feel at home. From daily help to live-in
-          care, we&apos;re building each experience with comfort, safety, and peace
+          care, we are building each experience with comfort, safety, and peace
           of mind in focus.
         </p>
         <div className={styles.divider} />

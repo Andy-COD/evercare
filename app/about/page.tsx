@@ -34,7 +34,7 @@ export default function AboutPage() {
           Ever Care is at the beginning of its journey, building a care service
           rooted in compassion, respect, and professionalism. We started with a
           simple mission: to help people remain at home with the dignity,
-          reassurance, and support they deserve. As we grow, we&apos;re focused
+          reassurance, and support they deserve. As we grow, we are focused
           on offering thoughtful care shaped around each person&apos;s needs,
           routines, and preferences.
         </Reveal>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             </div>
             <h2>OUR BEGINNING</h2>
             <p>
-              We&apos;re in the early stages of building Ever Care with
+              We are in the early stages of building Ever Care with
               intention, warmth, and a deep commitment to providing dependable,
               compassionate support for every family we serve. Our vision is
               rooted in dignity, trust, and genuine human connection—ensuring

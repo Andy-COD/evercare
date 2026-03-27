@@ -5,7 +5,7 @@ const values = [
   {
     icon: "☺",
     title: "Compassion",
-    body: "Support that's warm, patient, and truly human.",
+    body: "Support that is warm, patient, and truly human.",
   },
   {
     icon: "♡",

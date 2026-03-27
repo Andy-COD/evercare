@@ -36,7 +36,7 @@ export default function WhyAimsSection() {
             </div>
             <h3>Thoughtful Beginnings</h3>
             <p>
-              We&apos;re building our service with care, transparency, and a strong
+              We are building our service with care, transparency, and a strong
               commitment to doing things well from the start.
             </p>
           </Reveal>
@@ -45,7 +45,7 @@ export default function WhyAimsSection() {
             <div className={styles.iconBox}>⌖</div>
             <h3>Covering All Areas Of Ghana</h3>
             <p>
-              We&apos;re currently growing our coverage. Get in touch to confirm
+              We are currently growing our coverage. Get in touch to confirm
               availability in your area.
             </p>
           </Reveal>

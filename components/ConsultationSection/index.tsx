@@ -150,7 +150,7 @@ export default function ConsultationSection() {
             </h2>
             <p>
               Begin your care journey with support tailored to your needs. As a
-              growing service, we&apos;ll work closely with you to create a
+              growing service, we will work closely with you to create a
               personalised plan so you can feel safe and supported at home.
             </p>
 
