@@ -11,7 +11,7 @@ export default function Hero() {
         </h1>
         <p className="hero-copy fade-in delay-3">
           We are just getting started, with a simple focus on compassionate,
-          reliable support tailored to each family&apos;s needs.
+          reliable support tailored to the needs of each family.
         </p>
         <div className="hero-actions fade-in delay-4">
           <Link href="/contact" className="btn btn-primary">

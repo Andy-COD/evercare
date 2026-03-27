@@ -8,7 +8,7 @@ const sections = [
     titleAccent: "care",
     chip: "HOME CARE SERVICES",
     description:
-      "No matter your family's needs, we provide compassionate, reliable, and personalized home care support that you can truly count on, every day and at every step of the way.",
+      "No matter your family needs, we provide compassionate, reliable, and personalized home care support that you can truly count on, every day and at every step of the way.",
     bullets: [
       "Hourly care",
       "Night care",

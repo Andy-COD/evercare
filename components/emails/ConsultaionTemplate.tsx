@@ -42,7 +42,7 @@ import {
             </Text>
   
             <Text style={paragraph}>
-              You have received a new consultation request. The client’s details are provided below:
+              You have received a new consultation request. The client details are provided below:
             </Text>
   
             <Hr style={divider} />

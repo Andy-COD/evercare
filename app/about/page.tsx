@@ -35,7 +35,7 @@ export default function AboutPage() {
           rooted in compassion, respect, and professionalism. We started with a
           simple mission: to help people remain at home with the dignity,
           reassurance, and support they deserve. As we grow, we are focused
-          on offering thoughtful care shaped around each person&apos;s needs,
+          on offering thoughtful care shaped around the needs of each person,
           routines, and preferences.
         </Reveal>
 
