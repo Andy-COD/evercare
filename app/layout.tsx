@@ -44,6 +44,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -51,6 +52,23 @@ export const metadata: Metadata = {
       "max-snippet": -1,
       "max-video-preview": -1,
     },
+  },
+  openGraph: {
+    title: "Ever Care | Home Care Services in Ghana",
+    description:
+      "Ever Care provides compassionate home care, live-in care, respite care, and personalised support for families across Ghana.",
+    url: absoluteUrl("/"),
+    siteName: "Ever Care",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl("/images/hand-holding.png"),
+        width: 1200,
+        height: 630,
+        alt: "Ever Care | Home Care Services in Ghana",
+      },
+    ],
   },
 };
 

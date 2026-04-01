@@ -45,7 +45,7 @@ export function buildMetadata({
       siteName,
       title,
       description,
-      locale: "en_GH",
+      locale: "en_US",
       images: [
         {
           url: absoluteUrl(defaultOgImage),
